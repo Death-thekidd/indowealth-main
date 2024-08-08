@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="logo">
+    <img src="assets/logo.svg" alt="" /><span>Indowealth Group</span>
+  </div>
+  <div class="hamburger" (click)="toggleNavbar()">
+    <img src="assets/hamburger.svg" alt="" />
+  </div>
+</div>
+<nav class="navbar" [class.open]="isNavbarOpen">
+  <!-- Navigation links go here -->
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Trading</li>
+  </ul>
+  <ul>
+    <li>Sign In</li>
+    <li>Sign Up</li>
+    <li class="search"></li>
+  </ul>
+</nav>

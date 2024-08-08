@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("assets/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Orbitron-Regular";
+  src: url("assets/Orbitron/static/Orbitron-Regular.ttf");
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Orbitron-Regular" !important;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#content {
+  padding-top: 56px; /* Adjust based on header height */
+}

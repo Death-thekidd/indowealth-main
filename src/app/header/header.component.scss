@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(0.25turn, #d10600, #6b0300);
+  color: white;
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background-color: linear-gradient(0.25turn, #d10600, #6b0300);
+  overflow: hidden;
+  transition: height 0.3s ease;
+
+  &.open {
+    height: 40%;
+  }
+
+  /* Add more styles for navbar links here */
+}
