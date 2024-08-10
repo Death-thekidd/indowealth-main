@@ -1,0 +1,63 @@
+.hero {
+  height: 27rem;
+  width: 100%;
+  background: url("/assets/mobile_hero_bg.svg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    width: 25.7rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    background: url("/assets/hero_bg.svg") no-repeat;
+    max-height: 44.7rem;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 3rem;
+    padding-top: 8rem;
+    h1 {
+      font-size: 6rem;
+      width: 49.5rem;
+    }
+  }
+}
+
+.second-sec {
+  background: url("/assets/tokens_mobile_bg.svg");
+  min-height: 27rem;
+  width: 100%;
+  background-size: cover;
+  padding: 6rem 3rem;
+  .section-desc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      color: #da9915;
+      text-align: start;
+    }
+    li {
+      font-size: 1.2rem;
+      color: #fff;
+      list-style: none;
+    }
+  }
+  @media (min-width: 768px) {
+    background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
+      url("/assets/tokens_bg.svg");
+    min-height: 44.7rem;
+  }
+}

@@ -1,21 +1,80 @@
 <div class="header">
   <div class="logo">
-    <img src="assets/logo.svg" alt="" /><span>Indowealth Group</span>
+    <img src="assets/logo.svg" alt="Logo" />
+    <span>Indowealth Group</span>
   </div>
-  <div class="hamburger" (click)="toggleNavbar()">
-    <img src="assets/hamburger.svg" alt="" />
+  <div class="hamburger" (click)="toggleMobileNavbar()">
+    <img src="assets/hamburger.svg" alt="Menu" />
+  </div>
+
+  <div class="desktop-controls">
+    <div class="search">
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="Search" />
+        <span class="input-group-text"
+          ><img src="assets/search.svg" alt="Search"
+        /></span>
+      </div>
+    </div>
+    <div class="auth-buttons">
+      <a class="">Sign In</a>
+      <a class="">Sign Up</a>
+    </div>
+    <div class="social-icons">
+      <img src="assets/telegram.svg" alt="Social 1" />
+      <img src="assets/x.svg" alt="Social 2" />
+      <img src="assets/email.svg" alt="Social 3" />
+    </div>
   </div>
 </div>
-<nav class="navbar" [class.open]="isNavbarOpen">
-  <!-- Navigation links go here -->
-  <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Trading</li>
-  </ul>
-  <ul>
+
+<!-- Mobile Navbar -->
+<nav class="mobile-navbar" [class.open]="isMobileNavbarOpen">
+  <ul class="nav-list">
+    <li><a routerLink="/home" (click)="toggleMobileNavbar()">Home</a></li>
+    <li><a routerLink="/about" (click)="toggleMobileNavbar()">About</a></li>
+    <li><a routerLink="/trading" (click)="toggleMobileNavbar()">Trading</a></li>
     <li>Sign In</li>
     <li>Sign Up</li>
-    <li class="search"></li>
+    <li class="search">
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="Search" />
+        <span class="input-group-text"
+          ><img src="assets/search.svg" alt="Search"
+        /></span>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- Desktop Navbar -->
+<nav
+  class="desktop-navbar"
+  (mouseenter)="expandDesktopNavbar()"
+  (mouseleave)="collapseDesktopNavbar()"
+>
+  <ul class="nav-list">
+    <li>
+      <a routerLink="/home">
+        <div class="img-fill"><img src="assets/home.svg" alt="Home" /></div>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about">
+        <div class="img-fill">
+          <img src="assets/about.svg" alt="About" />
+        </div>
+        <span>About</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/trading">
+        <div class="img-fill">
+          <img src="assets/trading.svg" alt="Trading" />
+        </div>
+        <span>Trading</span>
+      </a>
+    </li>
   </ul>
 </nav>

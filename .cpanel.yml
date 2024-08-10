@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/indoweal/public_html/indowealth_dev
+    - /bin/cp -uRa dist/indowealth-main/browser/* $DEPLOYPATH

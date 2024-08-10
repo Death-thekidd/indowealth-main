@@ -10,6 +10,11 @@
   src: url("assets/Orbitron/static/Orbitron-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Orbitron-Bold";
+  src: url("assets/Orbitron/static/Orbitron-ExtraBold.ttf");
+}
+
 body,
 html {
   margin: 0;
@@ -18,12 +23,9 @@ html {
   height: 100%;
   font-family: "Orbitron-Regular" !important;
   font-size: 62.5%;
+  background-color: #d10600;
 }
 
 * {
   box-sizing: border-box;
-}
-
-#content {
-  padding-top: 56px; /* Adjust based on header height */
 }

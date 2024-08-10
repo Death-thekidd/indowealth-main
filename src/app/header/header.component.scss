@@ -2,33 +2,206 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
+  height: 6rem;
   background: linear-gradient(0.25turn, #d10600, #6b0300);
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
   .logo {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    @media (min-width: 768px) {
+      margin-left: 3.5rem;
+    }
+
+    img {
+      height: 4rem;
+      margin-right: 1rem;
+    }
+
+    span {
+      display: none; // Hide on mobile
+    }
   }
 
   .hamburger {
     font-size: 2rem;
     cursor: pointer;
+
+    img {
+      height: 3rem;
+    }
+  }
+
+  .desktop-controls {
+    display: none; // Hidden on mobile
+
+    .search {
+      margin-right: 2rem;
+
+      input {
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-right: 2rem;
+
+      a {
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+
+      img {
+        height: 2.5rem;
+      }
+    }
   }
 }
 
-.navbar {
+/* Mobile Navbar */
+.mobile-navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   height: 0;
+  top: 6rem;
+  left: 0;
   width: 100%;
-  background-color: linear-gradient(0.25turn, #d10600, #6b0300);
+  background-color: #da9915;
   overflow: hidden;
   transition: height 0.3s ease;
 
-  &.open {
-    height: 40%;
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: end;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease;
+
+    li {
+      margin: 2rem 0;
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+    }
   }
 
-  /* Add more styles for navbar links here */
+  &.open {
+    height: 36.3rem;
+    padding: 2rem;
+  }
+}
+
+/* Desktop Navbar */
+.desktop-navbar {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  width: 6rem;
+  height: calc(100vh - 6rem);
+  background: linear-gradient(#d10600, #6b0300);
+  overflow: hidden;
+  transition: width 0.3s ease;
+
+  .nav-list {
+    list-style: none;
+    padding: 1rem 3rem 1rem 1rem;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+      cursor: pointer;
+      border-bottom: 1px solid red;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+
+      .img-fill {
+        background-color: #da9915;
+        padding: 0.5rem;
+        margin-right: 1rem;
+      }
+
+      img {
+        height: 2.5rem;
+      }
+
+      span {
+        display: none; // Initially hidden
+      }
+    }
+  }
+
+  &:hover {
+    width: 15rem;
+
+    .nav-list li span {
+      display: inline-block; // Show on hover
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    .logo span {
+      display: inline-block; // Show on desktop
+      font-size: 2rem;
+    }
+
+    .hamburger {
+      display: none; // Hide on desktop
+    }
+
+    .desktop-controls {
+      display: flex; // Show on desktop
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .mobile-navbar {
+    display: none; // Hide mobile navbar on desktop
+  }
+
+  #content {
+    margin-top: 8rem; /* Offset for fixed header */
+    margin-left: 5rem; /* Adjust for collapsed navbar */
+    padding: 2rem;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+
+    .desktop-navbar:hover & {
+      margin-left: 15rem; /* Adjust for expanded navbar */
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-navbar {
+    display: none; // Hide desktop navbar on mobile
+  }
 }
