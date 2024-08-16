@@ -26,9 +26,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   animations: [
     trigger('fadeInSlideUp', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
+        style({ opacity: 0, transform: 'translateY(50px)' }),
         animate(
-          '800ms ease-out',
+          '900ms ease-out',
           style({ opacity: 1, transform: 'translateY(0)' })
         ),
       ]),
@@ -57,6 +57,8 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('paragraph') paragraph!: ElementRef;
   @ViewChild('button') button!: ElementRef;
+  @ViewChild('img') img!: ElementRef;
+  @ViewChild('desc') desc!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -86,6 +88,10 @@ export class HomeComponent implements AfterViewInit {
               );
             } else if (target === this.button.nativeElement) {
               this.runAnimation(this.button.nativeElement, 'fadeInSlideLeft');
+            } else if (target === this.img.nativeElement) {
+              this.runAnimation(this.img.nativeElement, 'fadeInSlideUp');
+            } else if (target === this.desc.nativeElement) {
+              this.runAnimation(this.desc.nativeElement, 'fadeInSlideRight');
             }
           }
         });
@@ -94,6 +100,8 @@ export class HomeComponent implements AfterViewInit {
       observer.observe(this.title.nativeElement);
       observer.observe(this.paragraph.nativeElement);
       observer.observe(this.button.nativeElement);
+      observer.observe(this.img.nativeElement);
+      observer.observe(this.desc.nativeElement);
     }
   }
 
