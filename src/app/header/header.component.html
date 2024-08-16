@@ -1,25 +1,19 @@
 <div class="header">
-  <div class="logo">
-    <img src="assets/logo.svg" alt="Logo" />
-    <span>Indowealth Group</span>
+  <div class="controls">
+    <div class="logo">
+      <img src="assets/logo.svg" alt="Logo" />
+      <span>Indowealth Group</span>
+    </div>
+    <div class="hamburger" (click)="toggleMobileNavbar()">
+      <img src="assets/hamburger.svg" alt="Menu" />
+    </div>
   </div>
-  <div class="hamburger" (click)="toggleMobileNavbar()">
-    <img src="assets/hamburger.svg" alt="Menu" />
-  </div>
-
   <div class="desktop-controls">
-    <div class="search">
-      <div class="input-group">
-        <input type="text" class="form-control" aria-label="Search" />
-        <span class="input-group-text"
-          ><img src="assets/search.svg" alt="Search"
-        /></span>
-      </div>
+    <div class="logo">
+      <img src="assets/logo.svg" alt="Logo" />
+      <span>Indowealth Group</span>
     </div>
-    <div class="auth-buttons">
-      <a class="">Sign In</a>
-      <a class="">Sign Up</a>
-    </div>
+
     <div class="social-icons">
       <img src="assets/telegram.svg" alt="Social 1" />
       <img src="assets/x.svg" alt="Social 2" />
@@ -34,16 +28,6 @@
     <li><a routerLink="/home" (click)="toggleMobileNavbar()">Home</a></li>
     <li><a routerLink="/about" (click)="toggleMobileNavbar()">About</a></li>
     <li><a routerLink="/trading" (click)="toggleMobileNavbar()">Trading</a></li>
-    <li>Sign In</li>
-    <li>Sign Up</li>
-    <li class="search">
-      <div class="input-group">
-        <input type="text" class="form-control" aria-label="Search" />
-        <span class="input-group-text"
-          ><img src="assets/search.svg" alt="Search"
-        /></span>
-      </div>
-    </li>
   </ul>
 </nav>
 

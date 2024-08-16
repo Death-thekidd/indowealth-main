@@ -11,8 +11,13 @@
 }
 
 @font-face {
-  font-family: "Orbitron-Bold";
-  src: url("assets/Orbitron/static/Orbitron-ExtraBold.ttf");
+  font-family: "Poppins";
+  src: url("assets/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "source-sans-pro";
+  src: url("assets/source-sans-pro/SourceSansPro-Regular.ttf");
 }
 
 body,
@@ -24,6 +29,11 @@ html {
   font-family: "Orbitron-Regular" !important;
   font-size: 62.5%;
   background-color: #d10600;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-family: "Poppins" !important;
 }
 
 * {

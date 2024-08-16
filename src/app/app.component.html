@@ -1,6 +1,9 @@
-<app-header></app-header>
-<div id="content">
-  <router-outlet></router-outlet>
-  <app-footer class="footer"></app-footer>
-  <div class="last-div"><span>All Rights Reserved</span></div>
-</div>
+<app-loader *ngIf="isLoading"></app-loader>
+<ng-container *ngIf="!isLoading">
+  <app-header></app-header>
+  <div id="content">
+    <router-outlet></router-outlet>
+    <app-footer class="footer"></app-footer>
+    <div class="last-div"><span>All Rights Reserved</span></div>
+  </div>
+</ng-container>
