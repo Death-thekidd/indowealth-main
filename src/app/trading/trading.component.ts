@@ -24,9 +24,9 @@ import {
   animations: [
     trigger('fadeInSlideUp', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
+        style({ opacity: 0, transform: 'translateY(100px)' }),
         animate(
-          '800ms ease-out',
+          '2s ease-out',
           style({ opacity: 1, transform: 'translateY(0)' })
         ),
       ]),
@@ -35,6 +35,7 @@ import {
 })
 export class TradingComponent {
   @ViewChild('title') title!: ElementRef;
+  @ViewChild('card') card!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -52,17 +53,23 @@ export class TradingComponent {
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement;
-
+            this.renderer.setStyle(target, 'visibility', 'visible');
             if (target === this.title.nativeElement) {
               this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
+            } else if (target === this.card.nativeElement) {
+              this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
             }
+          } else {
+            // Element is out of view: hide it
+            this.renderer.setStyle(target, 'visibility', 'hidden');
           }
         });
       }, options);
 
       observer.observe(this.title.nativeElement);
+      observer.observe(this.card.nativeElement);
     }
   }
 

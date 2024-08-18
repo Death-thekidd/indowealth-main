@@ -1,15 +1,23 @@
 <svg width="208" height="236" viewBox="0 0 208 236" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_2159_1041" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-4" y="2" width="208" height="231">
-<path d="M-1.99932 3.88779L202.473 231.956" stroke="white" stroke-width="3"/>
-</mask>
-<g mask="url(#mask0_2159_1041)">
-<rect x="213.551" y="-21.3066" width="30" height="230" transform="rotate(88.8862 213.551 -21.3066)" fill="url(#paint0_linear_2159_1041)"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_2159_1041" x1="216.184" y1="192.693" x2="262.236" y2="188.125" gradientUnits="userSpaceOnUse">
-<stop stop-color="#002700"/>
-<stop offset="0.51" stop-color="#0F9E0F"/>
-<stop offset="1" stop-color="#002700"/>
-</linearGradient>
-</defs>
+  <mask id="mask0_2159_1041" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-4" y="2" width="208" height="231">
+    <path d="M-1.99932 3.88779L202.473 231.956" stroke="white" stroke-width="3"/>
+  </mask>
+  <g mask="url(#mask0_2159_1041)">
+    <rect x="213.551" y="-21.3066" width="30" height="230" transform="rotate(88.8862 213.551 -21.3066)" fill="url(#paint0_linear_2159_1041)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; -210 -230; 0 0"
+        dur="4s"
+        repeatCount="indefinite"
+      />
+    </rect>
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear_2159_1041" x1="216.184" y1="192.693" x2="262.236" y2="188.125" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#002700"/>
+      <stop offset="0.51" stop-color="#0F9E0F"/>
+      <stop offset="1" stop-color="#002700"/>
+    </linearGradient>
+  </defs>
 </svg>

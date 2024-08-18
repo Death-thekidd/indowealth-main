@@ -10,10 +10,29 @@
   background-color: #ffffff;
   z-index: 9999;
 
+  .spinner-container {
+    position: relative;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .spinner {
-    width: 100px;
-    height: 100px;
-    animation: spin 1.5s linear infinite;
+    position: absolute;
+    width: 100px; /* Same as spinner-container */
+    height: 100px; /* Same as spinner-container */
+    border: 10px solid red; /* Red spinner border */
+    border-radius: 50%;
+    border-top: 10px solid transparent; /* Creates the spinner effect */
+    animation: spin 1s linear infinite; /* Spinner animation */
+  }
+  .logo {
+    position: relative; /* Makes sure the logo does not inherit rotation */
+    width: 70%; /* Adjust size of the logo */
+    height: 70%; /* Adjust size of the logo */
+    animation: resize 1s ease-in-out infinite; /* Logo resizing animation */
   }
 }
 
@@ -23,5 +42,15 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes resize {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
 }

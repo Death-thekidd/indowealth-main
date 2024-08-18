@@ -27,7 +27,7 @@
     }
 
     span {
-      display: none; // Hide on mobile
+      font-size: 1.2rem;
     }
   }
 
@@ -44,7 +44,7 @@
     display: flex; // Show on desktop
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 5rem);
+    width: calc(100% - 3rem);
     background: url("/assets/mobile_header_card.png") no-repeat center center;
     background-size: contain;
     padding: 1rem;
@@ -95,9 +95,10 @@
   left: 0;
   width: 100%;
   background: url("/assets/navbar_card.png") no-repeat center center;
-  background-size: contain;
+  background-size: cover; /* Change to cover */
   overflow: hidden;
   z-index: 1000;
+  transition: height 0.3s ease;
 
   .nav-list {
     list-style: none;
@@ -108,9 +109,12 @@
     font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
-    height: 0;
-    transition: 0.3s ease;
     font-family: "source-sans-pro";
+    padding: 2rem;
+    padding-top: 4rem;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+
     li {
       margin: 2rem 3rem;
     }
@@ -124,8 +128,10 @@
 
   &.open {
     height: 36.3rem;
-    padding: 2rem;
-    padding-top: 4rem;
+
+    .nav-list {
+      opacity: 1; /* Fade in content */
+    }
   }
 }
 
@@ -137,7 +143,6 @@
   width: 7rem;
   height: calc(100vh - 10rem);
   background: linear-gradient(#d10600, #6b0300);
-  overflow: hidden;
   transition: width 0.3s ease;
   z-index: 1000;
 
@@ -176,7 +181,7 @@
   }
 
   &:hover {
-    width: 15rem;
+    width: 22rem;
 
     .nav-list li span {
       display: inline-block; // Show on hover
@@ -204,6 +209,8 @@
       background-size: cover;
       margin-left: 3.5rem;
       padding: 3rem;
+      border-radius: 2rem;
+      height: 8.6rem;
     }
   }
 
@@ -227,5 +234,49 @@
 @media (max-width: 767px) {
   .desktop-navbar {
     display: none; // Hide desktop navbar on mobile
+  }
+}
+
+.floating-menu {
+  position: absolute;
+  top: 100%;
+  background-color: #da9915;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 4rem 2rem 2rem 2rem;
+  display: none;
+
+  z-index: 3001;
+  width: 18rem;
+  border-radius: 1rem;
+
+  &.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+
+    li {
+      margin: 0 0 1rem 0;
+      border-bottom: 1px solid #fff;
+      padding: 0 0 1.3rem 0;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "Montserrat-Regular";
+        font-weight: bold;
+        border: none;
+        padding: 0;
+      }
+    }
+    li:last-child {
+      border: none;
+    }
   }
 }

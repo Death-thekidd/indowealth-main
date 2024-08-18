@@ -40,12 +40,30 @@
   min-height: 27rem;
   width: 100%;
   background-size: cover;
-  padding: 6rem 3rem;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card {
+    background: rgba(209, 6, 0, 0.36);
+    border-radius: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid #da9915;
+    width: calc(100% - 1.5rem);
+    padding: 2rem;
+  }
+
+  .section-desc:last-child {
+    margin: 0;
+  }
   .section-desc {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 4rem;
     h2 {
       font-weight: bold;
       font-size: 2rem;
@@ -54,13 +72,28 @@
     }
     li {
       font-size: 1.2rem;
+      font-family: "Poppins";
       color: #fff;
       list-style: none;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
     }
   }
   @media (min-width: 768px) {
     background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
       url("/assets/tokens_bg.svg");
     min-height: 44.7rem;
+    .card {
+      background: rgba(209, 6, 0, 0.36);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid #da9915;
+      padding: 3rem;
+      width: calc(100% - 2rem);
+    }
   }
 }

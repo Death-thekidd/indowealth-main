@@ -1,6 +1,9 @@
 .footer-item {
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    padding-top: 20rem;
+  }
   .item-header {
     color: #da9915;
     font-size: 2rem;

@@ -59,6 +59,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('button') button!: ElementRef;
   @ViewChild('img') img!: ElementRef;
   @ViewChild('desc') desc!: ElementRef;
+  @ViewChild('card') card!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -76,8 +77,9 @@ export class HomeComponent implements AfterViewInit {
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement;
+            this.renderer.setStyle(target, 'visibility', 'visible');
 
             if (target === this.title.nativeElement) {
               this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
@@ -92,7 +94,12 @@ export class HomeComponent implements AfterViewInit {
               this.runAnimation(this.img.nativeElement, 'fadeInSlideUp');
             } else if (target === this.desc.nativeElement) {
               this.runAnimation(this.desc.nativeElement, 'fadeInSlideRight');
+            } else if (target === this.card.nativeElement) {
+              this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
             }
+          } else {
+            // Element is out of view: hide it
+            this.renderer.setStyle(target, 'visibility', 'hidden');
           }
         });
       }, options);
@@ -102,6 +109,7 @@ export class HomeComponent implements AfterViewInit {
       observer.observe(this.button.nativeElement);
       observer.observe(this.img.nativeElement);
       observer.observe(this.desc.nativeElement);
+      observer.observe(this.card.nativeElement);
     }
   }
 
