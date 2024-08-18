@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   isMobileNavbarOpen = false;
   isDesktopNavbarExpanded = false;
-  isFloatingMenuOpen = false;
+  activeSubmenu: HTMLElement | null = null;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -26,18 +26,42 @@ export class HeaderComponent {
 
   collapseDesktopNavbar() {
     this.isDesktopNavbarExpanded = false;
+    this.closeSubmenu();
   }
-  toggleFloatingMenu(event: Event) {
+
+  toggleSubmenu(event: Event) {
     event.stopPropagation(); // Prevent event bubbling
-    this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
+
+    const targetElement = event.currentTarget as HTMLElement;
+    const parentLi = targetElement.parentElement;
+
+    if (parentLi && parentLi.classList.contains('submenu-open')) {
+      this.closeSubmenu();
+    } else {
+      this.closeSubmenu();
+      if (parentLi) {
+        parentLi.classList.add('submenu-open');
+        this.activeSubmenu = parentLi.querySelector('.submenu') as HTMLElement;
+      }
+    }
+  }
+
+  closeSubmenu() {
+    if (this.activeSubmenu) {
+      const parentLi = this.activeSubmenu.closest('li');
+      if (parentLi) {
+        parentLi.classList.remove('submenu-open');
+      }
+      this.activeSubmenu = null;
+    }
   }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
-    // Close floating menu if clicked outside
-    if (!this.el.nativeElement.contains(event.target)) {
-      this.isFloatingMenuOpen = false;
+    const clickedInside = this.el.nativeElement.contains(event.target);
+    if (!clickedInside) {
       this.isMobileNavbarOpen = false;
+      this.closeSubmenu();
     }
   }
 }

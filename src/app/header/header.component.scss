@@ -11,6 +11,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+
   @media (min-width: 768px) {
     height: 10rem;
   }
@@ -18,8 +19,6 @@
   .logo {
     display: flex;
     align-items: center;
-    @media (min-width: 768px) {
-    }
 
     img {
       height: 4rem;
@@ -28,6 +27,11 @@
 
     span {
       font-size: 1.2rem;
+
+      @media (min-width: 768px) {
+        display: inline-block;
+        font-size: 2rem;
+      }
     }
   }
 
@@ -38,23 +42,41 @@
     img {
       height: 3rem;
     }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 
   .controls {
-    display: flex; // Show on desktop
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 3rem);
     background: url("/assets/mobile_header_card.png") no-repeat center center;
     background-size: contain;
     padding: 1rem;
+
     @media (min-width: 768px) {
       display: none;
     }
   }
 
   .desktop-controls {
-    display: none; // Hidden on mobile
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 10rem);
+      background: url("/assets/header_card.svg") no-repeat center center;
+      background-size: cover;
+      margin-left: 3.5rem;
+      padding: 3rem;
+      border-radius: 2rem;
+      height: 8.6rem;
+    }
 
     .search {
       margin-right: 2rem;
@@ -95,7 +117,7 @@
   left: 0;
   width: 100%;
   background: url("/assets/navbar_card.png") no-repeat center center;
-  background-size: cover; /* Change to cover */
+  background-size: cover;
   overflow: hidden;
   z-index: 1000;
   transition: height 0.3s ease;
@@ -113,16 +135,51 @@
     padding: 2rem;
     padding-top: 4rem;
     opacity: 0;
-    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    transition: opacity 0.3s ease;
 
     li {
       margin: 2rem 3rem;
-    }
+      position: relative;
 
-    a {
-      cursor: pointer;
-      text-decoration: none;
-      color: #fff;
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      &.has-submenu > a::after {
+        content: "▼";
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #da9915;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        z-index: 3001;
+        border-radius: 1rem;
+        width: 18rem;
+
+        li {
+          margin: 1rem 0;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-family: "Montserrat-Regular";
+            font-weight: bold;
+          }
+        }
+      }
+
+      &.submenu-open > .submenu {
+        display: block;
+      }
     }
   }
 
@@ -130,7 +187,7 @@
     height: 36.3rem;
 
     .nav-list {
-      opacity: 1; /* Fade in content */
+      opacity: 1;
     }
   }
 }
@@ -154,32 +211,71 @@
     font-weight: bold;
     color: #fff;
 
-    li:hover {
-      background: #6b0300;
-    }
+    li {
+      margin-bottom: 1rem;
+      position: relative;
 
-    a {
-      display: flex;
-      align-items: center;
-      padding: 1rem 0;
-      cursor: pointer;
-      border-bottom: 1px solid red;
-      font-size: 1rem;
-      text-decoration: none;
-      color: #fff;
+      &:hover {
+        background: #6b0300;
+      }
 
-      .img-fill {
+      a {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        cursor: pointer;
+        border-bottom: 1px solid red;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #fff;
+
+        .img-fill {
+          background-color: #da9915;
+          padding: 0.5rem;
+          margin-right: 1rem;
+        }
+
+        img {
+          height: 2.5rem;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      &.has-submenu > a::after {
+        content: "▼";
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 100%;
         background-color: #da9915;
-        padding: 0.5rem;
-        margin-right: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        z-index: 3001;
+        border-radius: 1rem;
+        width: 18rem;
+
+        li {
+          margin: 1rem 0;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-family: "Montserrat-Regular";
+            font-weight: bold;
+          }
+        }
       }
 
-      img {
-        height: 2.5rem;
-      }
-
-      span {
-        display: none; // Initially hidden
+      &.submenu-open > .submenu {
+        display: block;
       }
     }
   }
@@ -188,99 +284,31 @@
     width: 22rem;
 
     .nav-list li span {
-      display: inline-block; // Show on hover
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .header {
-    .logo span {
-      display: inline-block; // Show on desktop
-      font-size: 2rem;
-    }
-
-    .hamburger {
-      display: none; // Hide on desktop
-    }
-
-    .desktop-controls {
-      display: flex; // Show on desktop
-      align-items: center;
-      justify-content: space-between;
-      width: calc(100% - 10rem);
-      background: url("/assets/header_card.svg") no-repeat center center;
-      background-size: cover;
-      margin-left: 3.5rem;
-      padding: 3rem;
-      border-radius: 2rem;
-      height: 8.6rem;
-    }
-  }
-
-  .mobile-navbar {
-    display: none; // Hide mobile navbar on desktop
-  }
-
-  #content {
-    margin-top: 8rem; /* Offset for fixed header */
-    margin-left: 5rem; /* Adjust for collapsed navbar */
-    padding: 2rem;
-    overflow-y: auto;
-    transition: margin-left 0.3s ease;
-
-    .desktop-navbar:hover & {
-      margin-left: 15rem; /* Adjust for expanded navbar */
+      display: inline-block;
     }
   }
 }
 
 @media (max-width: 767px) {
   .desktop-navbar {
-    display: none; // Hide desktop navbar on mobile
+    display: none;
   }
 }
 
-.floating-menu {
-  position: absolute;
-  top: 100%;
-  background-color: #da9915;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 4rem 2rem 2rem 2rem;
-  display: none;
-
-  z-index: 3001;
-  width: 18rem;
-  border-radius: 1rem;
-
-  &.show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 768px) {
+  .mobile-navbar {
+    display: none;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    margin: 0;
+  #content {
+    margin-top: 8rem;
+    margin-left: 5rem;
+    padding: 2rem;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
 
-    li {
-      margin: 0 0 1rem 0;
-      border-bottom: 1px solid #fff;
-      padding: 0 0 1.3rem 0;
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-family: "Montserrat-Regular";
-        font-weight: bold;
-        border: none;
-        padding: 0;
-      }
-    }
-    li:last-child {
-      border: none;
+    .desktop-navbar:hover & {
+      margin-left: 15rem;
     }
   }
 }
