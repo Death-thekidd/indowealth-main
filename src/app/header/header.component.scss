@@ -154,6 +154,10 @@
     font-weight: bold;
     color: #fff;
 
+    li:hover {
+      background: #6b0300;
+    }
+
     a {
       display: flex;
       align-items: center;

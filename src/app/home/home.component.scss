@@ -37,10 +37,18 @@
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
     img {
       margin-left: 1rem;
     }
+
+    &:hover {
+      box-shadow: 0 0 15px rgba(218, 153, 21, 0.6); /* Glow effect matching the button color */
+      transform: scale(1.05); /* Slightly expand the button */
+    }
   }
+
   @media (min-width: 768px) {
     background: url("/assets/hero_bg.svg") no-repeat center center center;
     min-height: calc(100vh - 6rem);
