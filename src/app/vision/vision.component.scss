@@ -1,8 +1,5 @@
 .hero {
-  min-height: calc(100vh - 8.8rem);
-  @media (min-width: 768px) {
-    min-height: calc(100vh - 10rem);
-  }
+  min-height: calc(50vh - 8.8rem);
   width: 100%;
   background: url("/assets/mobile_hero_bg.svg") no-repeat center center;
   -webkit-background-size: cover;
@@ -23,7 +20,7 @@
   }
   @media (min-width: 768px) {
     background: url("/assets/hero_bg.svg") no-repeat center center center;
-    min-height: calc(100vh - 6rem);
+    min-height: calc(50vh - 10rem);
     align-items: flex-start;
     text-align: left;
     padding-left: 3rem;
@@ -59,10 +56,9 @@
   }
   .mobile-img {
     display: block;
-    position: absolute;
     width: calc(100%);
     z-index: 900;
-    transform: translateY(-95%);
+    transform: translateY(5%);
   }
   .desktop-img {
     display: none;
@@ -98,10 +94,15 @@
     margin-top: 1rem;
   }
   @media (min-width: 768px) {
-    background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-      url("/assets/about_bg.svg") no-repeat center center;
+    background: url("/assets/tokens_mobile_bg.svg");
+    background-size: cover;
     min-height: 85.7rem;
+    h2 {
+      font-size: 5rem;
+      width: auto;
+    }
     p {
+      font-size: 2.4rem;
       width: auto;
       padding: 1rem 0rem;
     }
@@ -111,10 +112,9 @@
     }
     .desktop-img {
       display: block;
-      position: absolute;
       width: calc(100% - 15rem);
       z-index: 900;
-      transform: translateY(-70%);
+      transform: translateY(15%);
     }
     .mobile-img {
       display: none;
@@ -127,7 +127,7 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid #da9915;
       padding: 15rem 3rem 3rem 3rem;
-      height: 37rem;
+      height: 47rem;
       width: calc(100% - 20rem);
     }
   }
