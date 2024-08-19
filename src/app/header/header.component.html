@@ -32,14 +32,14 @@
       <a routerLink="/home" (click)="toggleMobileNavbar()">Home</a>
     </li>
     <li>
-      <a routerLink="" (click)="toggleMobileNavbar()">Who Are We</a>
+      <a routerLink="" (click)="toggleMobileNavbar()">What we do</a>
     </li>
     <li
       class="has-submenu"
       (click)="toggleMobileSubmenu()"
       [class.open]="isMobileSubmenuOpen"
     >
-      <a>What We Do</a>
+      <a>Who Are We</a>
       <ul class="sub-menu">
         <li>
           <a routerLink="/about" (click)="toggleMobileNavbar()">About</a>
@@ -80,16 +80,6 @@
         <span class="text">Home</span>
       </a>
     </li>
-    <li>
-      <a routerLink="/home">
-        <span class="icon">
-          <span class="img-fill">
-            <img src="assets/home.svg" alt="Home" />
-          </span>
-        </span>
-        <span class="text">Who Are We</span>
-      </a>
-    </li>
     <li
       class="has-submenu"
       (click)="toggleDesktopSubmenu()"
@@ -101,7 +91,7 @@
             <img src="assets/company.svg" alt="What We Do" />
           </span>
         </span>
-        <span class="text">What We Do</span>
+        <span class="text">Who Are We</span>
       </a>
       <ul class="submenu">
         <li>
@@ -148,6 +138,17 @@
       </ul>
     </li>
     <li>
+      <a routerLink="/home">
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/we.svg" alt="Home" />
+          </span>
+        </span>
+        <span class="text">What We Do</span>
+      </a>
+    </li>
+
+    <li>
       <a routerLink="/blogs">
         <span class="icon">
           <span class="img-fill">
@@ -161,7 +162,7 @@
       <a routerLink="">
         <span class="icon">
           <span class="img-fill">
-            <img src="assets/blog.svg" alt="Blogs" />
+            <img src="assets/contact.svg" alt="Blogs" />
           </span>
         </span>
         <span class="text">Contact Us</span>
