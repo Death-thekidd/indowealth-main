@@ -23,16 +23,31 @@
 </div>
 
 <!-- Mobile Navbar -->
-<nav class="mobile-navbar" [class.open]="isMobileNavbarOpen">
+<nav
+  class="mobile-navbar"
+  [class.open]="isMobileNavbarOpen"
+  [class.closed]="!isMobileNavbarOpen"
+>
   <ul class="nav-list">
     <li>
       <a routerLink="/home" (click)="toggleMobileNavbar()">Home</a>
     </li>
-    <li class="has-submenu" (click)="toggleSubmenu($event)">
+    <li>
+      <a routerLink="" (click)="toggleMobileNavbar()">Who Are We</a>
+    </li>
+    <li
+      class="has-submenu"
+      (click)="toggleMobileSubmenu()"
+      [class.open]="isMobileSubmenuOpen"
+    >
       <a>What We Do</a>
       <ul class="sub-menu">
         <li>
-          <a routerLink="/trading" (click)="toggleMobileNavbar()">Trading</a>
+          <a routerLink="/about" (click)="toggleMobileNavbar()">About</a>
+        </li>
+
+        <li>
+          <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>
         </li>
         <li>
           <a routerLink="/mission" (click)="toggleMobileNavbar()">Mission</a>
@@ -43,47 +58,114 @@
       </ul>
     </li>
     <li>
-      <a routerLink="/blogs" (click)="toggleMobileNavbar()">
-        Blogs & Announcement
-      </a>
+      <a routerLink="/blogs" (click)="toggleMobileNavbar()"
+        >Blogs & Announcement</a
+      >
+    </li>
+    <li>
+      <a routerLink="" (click)="toggleMobileNavbar()">Contact Us</a>
     </li>
   </ul>
 </nav>
 
 <!-- Desktop Navbar -->
-<nav
-  class="desktop-navbar"
-  (mouseenter)="expandDesktopNavbar()"
-  (mouseleave)="collapseDesktopNavbar()"
->
+<nav class="desktop-navbar">
   <ul class="nav-list">
     <li>
       <a routerLink="/home">
-        <div class="img-fill">
-          <img src="assets/home.svg" alt="Home" />
-        </div>
-        <span>Home</span>
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/home.svg" alt="Home" />
+          </span>
+        </span>
+        <span class="text">Home</span>
       </a>
     </li>
-    <li class="has-submenu" (click)="toggleSubmenu($event)">
+    <li>
+      <a routerLink="/home">
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/home.svg" alt="Home" />
+          </span>
+        </span>
+        <span class="text">Who Are We</span>
+      </a>
+    </li>
+    <li
+      class="has-submenu"
+      (click)="toggleDesktopSubmenu()"
+      [class.open]="isDesktopSubmenuOpen"
+    >
       <a>
-        <div class="img-fill">
-          <img src="assets/company.svg" alt="What We Do" />
-        </div>
-        <span>What We Do</span>
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/company.svg" alt="What We Do" />
+          </span>
+        </span>
+        <span class="text">What We Do</span>
       </a>
       <ul class="submenu">
-        <li><a routerLink="/about/company">Company</a></li>
-        <li><a routerLink="/about/team">Team</a></li>
-        <li><a routerLink="/about/careers">Careers</a></li>
+        <li>
+          <a routerLink="/about">
+            <span class="icon">
+              <span class="img-fill">
+                <img src="assets/about.svg" alt="About" />
+              </span>
+            </span>
+            <span class="text">About</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/trading">
+            <span class="icon">
+              <span class="img-fill">
+                <img src="assets/trading.svg" alt="Trading" />
+              </span>
+            </span>
+            <span class="text">$IWT</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/mission">
+            <span class="icon">
+              <span class="img-fill">
+                <img src="assets/about.svg" alt="Team" />
+              </span>
+            </span>
+            <span class="text">Mission</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/vision">
+            <span class="icon">
+              <span class="img-fill">
+                <img src="assets/about.svg" alt="Team" />
+              </span>
+            </span>
+            <span class="text">Vision</span>
+          </a>
+        </li>
       </ul>
     </li>
     <li>
       <a routerLink="/blogs">
-        <div class="img-fill">
-          <img src="assets/blog.svg" alt="Blogs" />
-        </div>
-        <span>Blogs</span>
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/blog.svg" alt="Blogs" />
+          </span>
+        </span>
+        <span class="text">Blogs</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="">
+        <span class="icon">
+          <span class="img-fill">
+            <img src="assets/blog.svg" alt="Blogs" />
+          </span>
+        </span>
+        <span class="text">Contact Us</span>
       </a>
     </li>
   </ul>

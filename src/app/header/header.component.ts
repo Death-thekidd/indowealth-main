@@ -11,49 +11,24 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   isMobileNavbarOpen = false;
-  isDesktopNavbarExpanded = false;
-  activeSubmenu: HTMLElement | null = null;
+  isMobileSubmenuOpen = false;
+  isDesktopSubmenuOpen = false;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   toggleMobileNavbar() {
     this.isMobileNavbarOpen = !this.isMobileNavbarOpen;
-  }
-
-  expandDesktopNavbar() {
-    this.isDesktopNavbarExpanded = true;
-  }
-
-  collapseDesktopNavbar() {
-    this.isDesktopNavbarExpanded = false;
-    this.closeSubmenu();
-  }
-
-  toggleSubmenu(event: Event) {
-    event.stopPropagation(); // Prevent event bubbling
-
-    const targetElement = event.currentTarget as HTMLElement;
-    const parentLi = targetElement.parentElement;
-
-    if (parentLi && parentLi.classList.contains('submenu-open')) {
-      this.closeSubmenu();
-    } else {
-      this.closeSubmenu();
-      if (parentLi) {
-        parentLi.classList.add('submenu-open');
-        this.activeSubmenu = parentLi.querySelector('.submenu') as HTMLElement;
-      }
+    if (!this.isMobileNavbarOpen) {
+      this.isMobileSubmenuOpen = false; // Close submenu when navbar is closed
     }
   }
 
-  closeSubmenu() {
-    if (this.activeSubmenu) {
-      const parentLi = this.activeSubmenu.closest('li');
-      if (parentLi) {
-        parentLi.classList.remove('submenu-open');
-      }
-      this.activeSubmenu = null;
-    }
+  toggleMobileSubmenu() {
+    this.isMobileSubmenuOpen = !this.isMobileSubmenuOpen;
+  }
+
+  toggleDesktopSubmenu() {
+    this.isDesktopSubmenuOpen = !this.isDesktopSubmenuOpen;
   }
 
   @HostListener('document:click', ['$event'])
@@ -61,7 +36,8 @@ export class HeaderComponent {
     const clickedInside = this.el.nativeElement.contains(event.target);
     if (!clickedInside) {
       this.isMobileNavbarOpen = false;
-      this.closeSubmenu();
+      this.isMobileSubmenuOpen = false;
+      this.isDesktopSubmenuOpen = false;
     }
   }
 }

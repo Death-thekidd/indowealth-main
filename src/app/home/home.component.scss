@@ -80,8 +80,9 @@
   text-align: start;
   padding: 0 1rem;
   .card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
     justify-content: center;
     text-align: start;
@@ -92,10 +93,20 @@
       height: 30rem;
     }
   }
+
+  .section-img {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
   .section-desc {
     width: 80%;
     text-align: start;
+    flex-direction: column;
     margin-bottom: 4rem;
+    display: flex;
+    align-items: start;
+    justify-self: center;
     h2 {
       font-weight: bold;
       font-size: 2rem;
@@ -105,7 +116,7 @@
       font-size: 1.2rem;
       color: #fff;
       margin-top: 1rem;
-      line-height: 2;
+
       a {
         color: #da9915;
         text-decoration: none;
@@ -116,25 +127,49 @@
     background: linear-gradient(rgba(59, 14, 14, 0.8), rgba(59, 14, 14, 0.8)),
       url("/assets/mother_board.svg") no-repeat center center;
     min-height: 87.3rem;
+    background-size: cover;
     flex-direction: row;
     padding: 0 3rem;
     .card {
-      flex-direction: row;
-      background: url("/assets/home_about_us_card.png") no-repeat center center;
-      background-size: contain;
-      padding: 2rem;
-      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(21, 5, 5, 0.75);
+      border-radius: 12px;
+      border: 1px solid #da9915;
+      padding: 4rem;
+      width: calc(100% - 10rem);
       height: 67.5rem;
-      justify-content: space-evenly;
       img {
-        height: 30rem;
+        height: 35rem;
       }
     }
+    .section-img {
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .section-desc {
-      justify-self: flex-start;
-      width: 40.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 1;
       a {
         cursor: pointer;
+      }
+      h2 {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        text-align: start;
+      }
+      p {
+        font-size: 2.4rem;
+        line-height: 1.4;
+        max-width: 68.5rem;
       }
     }
   }

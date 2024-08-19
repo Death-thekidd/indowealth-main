@@ -53,8 +53,12 @@
     align-items: center;
     justify-content: space-between;
     width: calc(100% - 3rem);
-    background: url("/assets/mobile_header_card.png") no-repeat center center;
-    background-size: contain;
+    background: rgba(209, 6, 0, 0.36);
+    border-radius: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid #da9915;
     padding: 1rem;
 
     @media (min-width: 768px) {
@@ -70,8 +74,12 @@
       align-items: center;
       justify-content: space-between;
       width: calc(100% - 10rem);
-      background: url("/assets/header_card.svg") no-repeat center center;
-      background-size: cover;
+      background: rgba(209, 6, 0, 0.36);
+      border-radius: 2rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid #da9915;
       margin-left: 3.5rem;
       padding: 3rem;
       border-radius: 2rem;
@@ -112,12 +120,14 @@
 /* Mobile Navbar */
 .mobile-navbar {
   position: fixed;
-  height: 0;
   top: 8.8rem;
   left: 0;
   width: 100%;
-  background: url("/assets/navbar_card.png") no-repeat center center;
-  background-size: cover;
+  height: 0;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(107, 79, 15, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
   overflow: hidden;
   z-index: 1000;
   transition: height 0.3s ease;
@@ -133,61 +143,55 @@
     color: #fff;
     font-family: "source-sans-pro";
     padding: 2rem;
-    padding-top: 4rem;
+    padding-top: 2rem;
     opacity: 0;
     transition: opacity 0.3s ease;
 
     li {
-      margin: 2rem 3rem;
+      margin: 1rem 0; /* Adjust margin for spacing */
       position: relative;
 
       a {
         cursor: pointer;
         text-decoration: none;
         color: #fff;
+        display: block; /* Ensure the link covers the full width */
+        padding: 1rem 0; /* Padding inside the link */
       }
 
-      &.has-submenu > a::after {
-        content: "▼";
-        font-size: 1.2rem;
-        margin-left: 0.5rem;
-      }
-
-      .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #da9915;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        z-index: 3001;
-        border-radius: 1rem;
-        width: 18rem;
-
-        li {
-          margin: 1rem 0;
-
-          a {
-            text-decoration: none;
-            color: #fff;
-            font-family: "Montserrat-Regular";
-            font-weight: bold;
-          }
+      &.has-submenu {
+        .sub-menu {
+          padding-left: 2rem; /* Push submenu in */
+          margin-top: 1rem; /* Space above submenu */
+          height: 0; /* Hide submenu initially */
+          overflow: hidden;
+          opacity: 0;
+          transition: height 0.3s ease, opacity 0.3s ease;
+          list-style: none;
         }
-      }
 
-      &.submenu-open > .submenu {
-        display: block;
+        &.open .sub-menu {
+          height: auto; /* Adjust based on content height */
+          opacity: 1;
+          padding-left: 2rem; /* Same padding as above */
+        }
       }
     }
   }
 
   &.open {
-    height: 36.3rem;
-
+    height: auto; /* Adjust height to fit content */
+    max-height: 100vh; /* Prevent navbar from growing too tall */
+    padding-bottom: 2rem; /* Optional bottom padding */
     .nav-list {
       opacity: 1;
+    }
+  }
+
+  &.closed {
+    height: 0; /* Collapse height when closed */
+    .nav-list {
+      opacity: 0;
     }
   }
 }
@@ -197,21 +201,22 @@
   position: fixed;
   top: 10rem;
   left: 0;
-  width: 7rem;
+  width: 9rem;
   height: calc(100vh - 10rem);
   background: linear-gradient(#d10600, #6b0300);
   transition: width 0.3s ease;
   z-index: 1000;
+  overflow: hidden;
 
   .nav-list {
-    list-style: none;
-    padding: 1rem 3rem 1rem 1.5rem;
-    margin: 0;
+    position: relative;
     font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
+    padding: 0;
 
     li {
+      list-style: none;
       margin-bottom: 1rem;
       position: relative;
 
@@ -220,71 +225,137 @@
       }
 
       a {
+        white-space: nowrap;
+        position: relative;
         display: flex;
         align-items: center;
         padding: 1rem 0;
         cursor: pointer;
-        border-bottom: 1px solid red;
-        font-size: 1rem;
         text-decoration: none;
-        color: #fff;
+
+        .text {
+          position: relative;
+          height: 6rem;
+          display: flex;
+          align-items: center;
+          font-size: 2.5rem;
+          color: #fff;
+          font-weight: bold;
+          font-family: "SourceSans3";
+        }
+
+        .icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 9rem;
+          height: 5.4rem;
+        }
 
         .img-fill {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           background-color: #da9915;
-          padding: 0.5rem;
-          margin-right: 1rem;
+          width: 5.4rem;
+          height: 5.4rem;
+          border-radius: 5px;
         }
 
         img {
-          height: 2.5rem;
+          height: 1.5em;
         }
 
-        span {
+        .logo {
           display: none;
-        }
-      }
+          margin-right: 1rem;
 
-      &.has-submenu > a::after {
-        content: "▼";
-        font-size: 1.2rem;
-        margin-left: 0.5rem;
+          img {
+            width: 2rem;
+          }
+        }
+
+        &.active + .submenu {
+          display: block;
+        }
       }
 
       .submenu {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 100%;
-        background-color: #da9915;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        z-index: 3001;
-        border-radius: 1rem;
-        width: 18rem;
+        background: #6b0300;
+        padding: 0rem;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+
+        .icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 11rem;
+          height: 5.4rem;
+        }
+
+        .img-fill {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #da9915;
+          width: 5.4rem;
+          height: 5.4rem;
+          border-radius: 5px;
+        }
+
+        img {
+          height: 1.5em;
+        }
 
         li {
-          margin: 1rem 0;
+          margin-bottom: 0.5rem;
 
           a {
-            text-decoration: none;
-            color: #fff;
-            font-family: "Montserrat-Regular";
-            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+
+            .logo {
+              display: block;
+            }
+            .text {
+              display: block;
+              position: relative;
+              height: 6rem;
+              display: flex;
+              align-items: center;
+              font-size: 1em;
+              color: #fff;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+            }
           }
         }
       }
 
-      &.submenu-open > .submenu {
+      &.has-submenu.open .submenu {
         display: block;
+        height: auto; /* Adjust as needed */
+        opacity: 1;
       }
     }
   }
 
   &:hover {
-    width: 22rem;
+    width: 30rem;
 
-    .nav-list li span {
-      display: inline-block;
+    .nav-list li {
+      .logo {
+        display: block;
+      }
     }
   }
 }

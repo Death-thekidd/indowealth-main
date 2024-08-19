@@ -55,7 +55,6 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('title') title!: ElementRef;
-  @ViewChild('paragraph') paragraph!: ElementRef;
   @ViewChild('button') button!: ElementRef;
   @ViewChild('img') img!: ElementRef;
   @ViewChild('desc') desc!: ElementRef;
@@ -83,11 +82,6 @@ export class HomeComponent implements AfterViewInit {
 
             if (target === this.title.nativeElement) {
               this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
-            } else if (target === this.paragraph.nativeElement) {
-              this.runAnimation(
-                this.paragraph.nativeElement,
-                'fadeInSlideRight'
-              );
             } else if (target === this.button.nativeElement) {
               this.runAnimation(this.button.nativeElement, 'fadeInSlideLeft');
             } else if (target === this.img.nativeElement) {
@@ -105,7 +99,6 @@ export class HomeComponent implements AfterViewInit {
       }, options);
 
       observer.observe(this.title.nativeElement);
-      observer.observe(this.paragraph.nativeElement);
       observer.observe(this.button.nativeElement);
       observer.observe(this.img.nativeElement);
       observer.observe(this.desc.nativeElement);

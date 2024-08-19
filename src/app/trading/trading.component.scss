@@ -1,10 +1,8 @@
 .hero {
-  min-height: calc(100vh - 8.8rem);
-  @media (min-width: 768px) {
-    min-height: calc(100vh - 10rem);
-  }
+  min-height: calc(50vh - 8.8rem);
   width: 100%;
-  background: url("/assets/mobile_hero_bg.svg") no-repeat center center;
+  background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
+    url("/assets/tokens_bg.svg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -23,7 +21,7 @@
   }
   @media (min-width: 768px) {
     background: url("/assets/hero_bg.svg") no-repeat center center center center;
-    min-height: calc(100vh - 6rem);
+    min-height: calc(50vh - 10rem);
     align-items: flex-start;
     text-align: left;
     padding-left: 3rem;
@@ -72,9 +70,9 @@
     }
     li {
       font-size: 1.2rem;
-      font-family: "Poppins";
+      font-family: "SourceSans3";
       color: #fff;
-      list-style: none;
+      list-style: circle;
     }
     ul {
       padding: 0;
@@ -83,7 +81,7 @@
   }
   @media (min-width: 768px) {
     background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-      url("/assets/tokens_bg.svg");
+      url("/assets/tokens_mobile_bg.svg");
     min-height: 44.7rem;
     .card {
       background: rgba(209, 6, 0, 0.36);
@@ -92,8 +90,21 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid #da9915;
-      padding: 3rem;
+      padding: 6rem;
       width: calc(100% - 2rem);
+    }
+    .section-desc {
+      h2 {
+        font-size: 5rem;
+      }
+      li {
+        font-size: 2.4rem;
+        line-height: 1.5;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+      }
     }
   }
 }

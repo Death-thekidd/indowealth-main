@@ -97,6 +97,7 @@
   @media (min-width: 768px) {
     background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
       url("/assets/about_bg.svg") no-repeat center center;
+    background-size: cover;
     min-height: 85.7rem;
     p {
       width: auto;

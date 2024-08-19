@@ -20,6 +20,11 @@
   src: url("assets/source-sans-pro/SourceSansPro-Regular.ttf");
 }
 
+@font-face {
+  font-family: "SourceSans3";
+  src: url("assets/Source_Sans_3/static/SourceSans3-Regular.ttf");
+}
+
 body,
 html {
   margin: 0;
@@ -33,7 +38,7 @@ html {
 }
 
 p {
-  font-family: "Poppins" !important;
+  font-family: "SourceSans3" !important;
 }
 
 * {
