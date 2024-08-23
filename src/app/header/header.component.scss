@@ -238,7 +238,7 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    text-align: start;
+    text-align: center;
     font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
@@ -262,20 +262,19 @@
 
       &.has-submenu {
         .sub-menu {
-          padding-left: 2rem; /* Push submenu in */
-          margin-top: 1rem; /* Space above submenu */
           height: 0; /* Hide submenu initially */
           overflow: hidden;
           opacity: 0;
           transition: height 0.3s ease, opacity 0.3s ease;
           list-style: none;
           background: #da9915;
+          padding: 0;
         }
 
         &.open .sub-menu {
           height: auto; /* Adjust based on content height */
           opacity: 1;
-          padding-left: 2rem; /* Same padding as above */
+          margin-top: 1rem;
         }
       }
     }
