@@ -21,8 +21,18 @@
 }
 
 @font-face {
+  font-family: "source-sans-pro-bold";
+  src: url("assets/source-sans-pro/SourceSansPro-Bold.ttf");
+}
+
+@font-face {
   font-family: "SourceSans3";
   src: url("assets/Source_Sans_3/static/SourceSans3-Regular.ttf");
+}
+
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("assets/Bebas_Neue/BebasNeue-Regular.ttf");
 }
 
 body,
@@ -39,6 +49,15 @@ html {
 
 p {
   font-family: "SourceSans3" !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "BebasNeue-Regular" !important;
 }
 
 * {

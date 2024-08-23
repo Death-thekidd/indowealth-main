@@ -82,36 +82,136 @@
       border: 1px solid #da9915;
       margin-left: 3.5rem;
       padding: 3rem;
-      border-radius: 2rem;
       height: 7rem;
-    }
 
-    .search {
-      margin-right: 2rem;
-
-      input {
-        padding: 0.5rem 1rem;
-        font-size: 1.6rem;
-      }
-    }
-
-    .auth-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-right: 2rem;
-
-      a {
+      .nav-list {
+        display: flex;
+        flex-grow: 0.5;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
         font-size: 1rem;
-        cursor: pointer;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style: none;
+          position: relative;
+
+          &:hover {
+            .text,
+            a {
+              color: #da9915;
+            }
+          }
+
+          a {
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #fff;
+            font-family: "source-sans-pro";
+
+            .text {
+              position: relative;
+              height: 6rem;
+              display: flex;
+              align-items: center;
+              font-size: 1.5rem;
+              color: #fff;
+              font-family: "source-sans-pro";
+            }
+
+            &.active {
+              background-color: #da9915; /* Yellow background for active item */
+            }
+
+            &.active + .submenu {
+              display: block;
+              position: fixed;
+              top: 6rem; /* Position submenu under the main header */
+              left: 0;
+              width: 100%;
+              background-color: #da9915; /* Yellow background for submenu */
+              z-index: 999; /* Ensure it's above other content */
+              border-top: 0.5rem solid #da9915; /* Visual connection with active item */
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+          }
+
+          .submenu {
+            display: none;
+            padding: 1rem 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            background-color: #da9915; /* Yellow background for submenu */
+
+            &.open {
+              display: flex !important;
+              flex-direction: row;
+              max-height: none;
+              opacity: 1;
+              justify-content: space-around; /* Arrange items in a row */
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            li {
+              a {
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 2rem;
+                font-size: 1rem;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+              }
+            }
+          }
+
+          &.has-submenu.open .submenu {
+            display: flex;
+            height: auto;
+            opacity: 1;
+          }
+        }
       }
-    }
 
-    .social-icons {
-      display: flex;
-      gap: 1rem;
+      .search {
+        margin-right: 2rem;
 
-      img {
-        height: 2.5rem;
+        input {
+          padding: 0.5rem 1rem;
+          font-size: 1.6rem;
+        }
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-right: 2rem;
+
+        a {
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          height: 2.5rem;
+        }
       }
     }
   }
@@ -269,15 +369,6 @@
           height: 1.5em;
         }
 
-        .logo {
-          display: none;
-          margin-right: 1rem;
-
-          img {
-            width: 2rem;
-          }
-        }
-
         &.active + .submenu {
           display: block;
         }
@@ -285,36 +376,12 @@
 
       .submenu {
         display: none;
-        background: #6b0300;
+        background: #da9915;
         padding: 0rem;
         transition: max-height 0.3s ease, opacity 0.3s ease;
         height: 0;
         opacity: 0;
         overflow: hidden;
-
-        .icon {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-width: 11rem;
-          height: 5.4rem;
-        }
-
-        .img-fill {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #da9915;
-          width: 5.4rem;
-          height: 5.4rem;
-          border-radius: 5px;
-        }
-
-        img {
-          height: 1.5em;
-        }
 
         li {
           margin-bottom: 0.5rem;

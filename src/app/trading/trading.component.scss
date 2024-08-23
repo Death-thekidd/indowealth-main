@@ -24,7 +24,7 @@
     min-height: calc(50vh - 10rem);
     align-items: flex-start;
     text-align: left;
-    padding-left: 3rem;
+    padding-left: 5%;
     padding-top: 8rem;
     h1 {
       font-size: 10rem;
@@ -34,7 +34,7 @@
 }
 
 .second-sec {
-  background: url("/assets/tokens_mobile_bg.svg");
+  background: #fff;
   min-height: 27rem;
   width: 100%;
   background-size: cover;
@@ -43,11 +43,11 @@
   align-items: center;
   justify-content: center;
   .card {
-    background: rgba(209, 6, 0, 0.36);
     border-radius: 2rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(215, 228, 229, 0.75);
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #da9915;
     width: calc(100% - 1.5rem);
     padding: 2rem;
@@ -71,7 +71,7 @@
     li {
       font-size: 1.2rem;
       font-family: "SourceSans3";
-      color: #fff;
+      color: #000;
       list-style: circle;
     }
     ul {
@@ -80,15 +80,14 @@
     }
   }
   @media (min-width: 768px) {
-    background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-      url("/assets/tokens_mobile_bg.svg");
+    background: #fff;
     min-height: 44.7rem;
     .card {
-      background: rgba(209, 6, 0, 0.36);
       border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(215, 228, 229, 0.75);
+      box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
       border: 1px solid #da9915;
       padding: 6rem;
       width: calc(100% - 2rem);

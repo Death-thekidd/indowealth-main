@@ -14,11 +14,12 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-vision',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './vision.component.html',
   styleUrl: './vision.component.scss',
   animations: [

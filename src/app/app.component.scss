@@ -4,7 +4,6 @@
   padding-top: 8.8rem;
   @media (min-width: 768px) {
     padding-top: 10rem;
-    padding-left: 9rem;
   }
   overflow-y: auto;
   transition: margin-left 0.3s ease;
@@ -21,6 +20,7 @@
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       column-gap: 4rem;
+      padding: 0 10%;
     }
   }
   .last-div {

@@ -35,8 +35,8 @@
     border: none;
     border-radius: 0.5rem;
     color: #fff;
-    font-size: 1.2rem;
-    font-family: "SourceSans3";
+    font-size: 2rem;
+    font-family: "source-sans-pro-bold";
     cursor: pointer;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     width: 20rem;
@@ -53,14 +53,25 @@
   }
 
   @media (min-width: 768px) {
-    background: url("/assets/hero_bg.svg") no-repeat center center center;
-    min-height: calc(100vh - 6rem);
+    background: url("/assets/landing_page.png") no-repeat center center;
+    background-size: cover;
+    min-height: calc(70vh - 6rem);
+    align-items: flex-start;
+    text-align: start;
+    padding-left: 5%;
 
     h1 {
-      width: 101rem;
-      font-size: 10rem;
+      width: 70rem;
+      font-size: 7rem;
       margin-bottom: 1rem;
       line-height: 1;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    h1 {
+      width: 50%rem;
+      font-size: 10rem;
     }
   }
 }
@@ -68,13 +79,9 @@
 .second-sec {
   position: relative;
   overflow: hidden;
-  background: url("/assets/landing_page.png");
+  background: #fff;
   width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 53.9rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,10 +97,12 @@
     text-align: start;
     background: none;
     width: 100%;
-    height: auto;
+    height: 60%;
+    padding: 4rem;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(21, 5, 5, 0.75);
+    background-color: rgba(215, 228, 229, 0.75);
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     border: 1px solid #da9915;
     img {
@@ -120,20 +129,21 @@
       color: #da9915;
     }
     p {
-      font-size: 1.2rem;
-      color: #fff;
+      font-size: 1.4rem;
+      color: #000;
       margin-top: 1rem;
 
       a {
         color: #da9915;
+        font-weight: bold;
+        font-family: "source-sans-pro-bold";
         text-decoration: none;
       }
     }
   }
   @media (min-width: 768px) {
-    background: url("/assets/landing_page.png") no-repeat center center;
-    min-height: 87.3rem;
-    background-size: cover;
+    background: #fff;
+    height: 100vh;
     flex-direction: row;
     padding: 0 3rem;
     .card {
@@ -141,12 +151,13 @@
       grid-template-rows: 1fr;
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(21, 5, 5, 0.75);
+      background-color: rgba(215, 228, 229, 0.75);
+      box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       border: 1px solid #da9915;
       padding: 4rem;
       width: calc(100% - 10rem);
-      height: 67.5rem;
+      height: 80%;
       img {
         height: 35rem;
       }
@@ -166,6 +177,9 @@
       grid-row: 1;
       a {
         cursor: pointer;
+        font-size: 2.6rem;
+        font-family: "source-sans-pro-bold";
+        font-weight: bold;
       }
       h2 {
         font-size: 5rem;

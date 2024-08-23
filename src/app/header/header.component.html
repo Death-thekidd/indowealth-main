@@ -14,6 +14,44 @@
       <img src="assets/logo.svg" alt="Logo" />
       <span>Indowealth Group</span>
     </div>
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/home">Home</a>
+      </li>
+      <li
+        class="has-submenu"
+        (click)="toggleDesktopSubmenu()"
+        [class.open]="isDesktopSubmenuOpen"
+      >
+        <a [class.active]="isDesktopSubmenuOpen">
+          <span class="text">Who Are We</span>
+        </a>
+        <ul class="submenu" [class.open]="isDesktopSubmenuOpen">
+          <li>
+            <a routerLink="/about">About</a>
+          </li>
+          <li>
+            <a routerLink="/trading">$IWT</a>
+          </li>
+          <li>
+            <a routerLink="/mission">Mission</a>
+          </li>
+          <li>
+            <a routerLink="/vision">Vision</a>
+          </li>
+        </ul>
+      </li>
+      <!-- Other nav items -->
+      <li>
+        <a routerLink="/home">What We Do</a>
+      </li>
+      <li>
+        <a routerLink="/blogs">Blogs</a>
+      </li>
+      <li>
+        <a routerLink="/contact">Contact Us</a>
+      </li>
+    </ul>
     <div class="social-icons">
       <img src="assets/telegram.svg" alt="Social 1" />
       <img src="assets/x.svg" alt="Social 2" />
@@ -68,7 +106,7 @@
 </nav>
 
 <!-- Desktop Navbar -->
-<nav class="desktop-navbar">
+<!-- <nav class="desktop-navbar">
   <ul class="nav-list">
     <li>
       <a routerLink="/home">
@@ -169,4 +207,4 @@
       </a>
     </li>
   </ul>
-</nav>
+</nav> -->

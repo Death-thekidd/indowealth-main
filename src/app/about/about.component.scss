@@ -34,28 +34,25 @@
 }
 
 .second-sec {
-  background: url("/assets/about_mobile_bg.svg");
+  background: #fff;
   width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   min-height: 53.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
+
   .card {
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
-    background: rgba(209, 6, 0, 0.36);
     border-radius: 2rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(215, 228, 229, 0.75);
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #da9915;
     width: calc(100% - 1.5rem);
     img {
@@ -93,14 +90,12 @@
   p {
     width: auto;
     font-size: 1.2rem;
-    color: #fff;
+    color: #000;
     margin-top: 1rem;
   }
   padding-bottom: 3rem;
   @media (min-width: 768px) {
-    background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-      url("/assets/tokens_mobile_bg.svg") no-repeat center center;
-    background-size: cover;
+    background: #fff;
     min-height: 99.7rem;
     p {
       width: auto;
@@ -110,11 +105,11 @@
     .card {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(2, 1fr);
-      background: rgba(209, 6, 0, 0.36);
       border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(215, 228, 229, 0.75);
+      box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
       border: 1px solid #da9915;
       padding: 3rem;
       width: calc(100% - 10rem);
