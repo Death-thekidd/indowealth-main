@@ -19,6 +19,7 @@
   .logo {
     display: flex;
     align-items: center;
+    font-family: "BebasNeue-Regular";
 
     img {
       height: 4rem;
@@ -26,7 +27,7 @@
     }
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
 
       @media (min-width: 768px) {
         display: inline-block;
