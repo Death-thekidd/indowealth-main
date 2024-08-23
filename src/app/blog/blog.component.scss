@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(50vh - 8.8rem);
   width: 100%;
-  background: url("/assets/mobile_hero_bg.svg") no-repeat center center;
+  background: url("/assets/tokens_bg.svg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,7 +19,7 @@
     margin-bottom: 1.5rem;
   }
   @media (min-width: 768px) {
-    background: url("/assets/hero_bg.svg") no-repeat center center center;
+    background: url("/assets/token_big_bg.jpg") no-repeat center center center;
     min-height: calc(50vh - 10rem);
     align-items: flex-start;
     text-align: left;
@@ -35,7 +35,7 @@
 .second-sec {
   background: #fff;
   width: 100%;
-  min-height: 80.9rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,7 @@
   }
   @media (min-width: 768px) {
     background: #fff;
-    min-height: 85.7rem;
+    height: 100vh;
     p {
       width: auto;
       padding: 1rem 0rem;
@@ -123,4 +123,82 @@
 }
 .card {
   visibility: hidden;
+}
+
+.blog-list {
+  height: 80%;
+  width: 95%;
+
+  .card {
+    border: 1px solid #da9915;
+    border-radius: 2rem;
+    background-color: rgba(215, 228, 229, 0.75);
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      h5 {
+        font-weight: bold;
+        color: #da9915;
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .row {
+      flex-grow: 1;
+    }
+  }
+
+  // Pagination styling
+  ::ng-deep .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 1rem 0;
+    list-style-type: none;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      margin: 0 0.5rem;
+
+      span,
+      a {
+        color: #da9915 !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba(215, 228, 229, 0.75) !important;
+        font-size: 1.2rem !important;
+
+        &:hover {
+          background-color: #da9915 !important;
+          color: #fff !important;
+        }
+      }
+
+      &.current a {
+        background-color: #da9915 !important;
+        color: #fff !important;
+      }
+
+      &.disabled a {
+        color: #ccc !important;
+      }
+    }
+  }
 }

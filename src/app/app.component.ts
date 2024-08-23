@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import { ScrollObserveDirective } from './scroll-observe.directive';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { ScrollObserveDirective } from './scroll-observe.directive';
     FooterComponent,
     LoaderComponent,
     CommonModule,
+    NgxPaginationModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

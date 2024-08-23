@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -14,11 +14,13 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [NgxPaginationModule, CommonModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss',
   animations: [
@@ -55,11 +57,41 @@ export class BlogComponent {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
+  blogs: any[] = [];
+  page: number = 1;
+  totalBlogs: number = 0;
+  blogsPerPage: number = 4;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
-    private animationBuilder: AnimationBuilder
+    private animationBuilder: AnimationBuilder,
+    private sanityService: SanityService
   ) {}
+
+  ngOnInit(): void {
+    this.getTotalBlogs();
+    this.getBlogs(this.page);
+  }
+
+  getTotalBlogs() {
+    this.sanityService.fetchTotalPostsCount().then((count: number) => {
+      this.totalBlogs = count;
+    });
+  }
+
+  getBlogs(page: number) {
+    this.sanityService
+      .fetchPosts(page, this.blogsPerPage)
+      .then((posts: any[]) => {
+        this.blogs = posts;
+      });
+  }
+
+  onPageChange(newPage: number) {
+    this.page = newPage;
+    this.getBlogs(this.page);
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -89,7 +121,7 @@ export class BlogComponent {
       }, options);
 
       observer.observe(this.title.nativeElement);
-      observer.observe(this.card.nativeElement);
+      // observer.observe(this.card.nativeElement);
     }
   }
 
