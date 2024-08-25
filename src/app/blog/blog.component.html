@@ -1,4 +1,6 @@
-<section class="hero"><h1 #title>Blog & Announcements</h1></section>
+<section class="hero">
+  <h1 #title>Blog & Announcements</h1>
+</section>
 <section class="second-sec">
   <section class="blog-list">
     <div class="container">
@@ -10,19 +12,24 @@
               [src]="blog.mainImage.asset.url"
               alt="{{ blog.title }}"
             />
-            <div class="card-body">
+            <div class="card-overlay">
               <h5 class="card-title">{{ blog.title }}</h5>
               <p class="card-text">{{ blog.body | slice : 0 : 150 }}...</p>
+              <button class="read-more-btn">Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card mb-4">
+            <img class="card-img-top" src="assets/eye.svg" alt="Blog Title" />
+            <div class="card-overlay">
+              <h5 class="card-title">Blog Title</h5>
+              <p class="card-text">textt...</p>
+              <button class="read-more-btn">Read More</button>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Pagination Controls -->
-      <pagination-controls
-        class="pagination"
-        (pageChange)="onPageChange($event)"
-      ></pagination-controls>
     </div>
   </section>
 </section>

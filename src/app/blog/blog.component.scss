@@ -126,79 +126,48 @@
 }
 
 .blog-list {
-  height: 80%;
-  width: 95%;
-
   .card {
-    border: 1px solid #da9915;
-    border-radius: 2rem;
-    background-color: rgba(215, 228, 229, 0.75);
-    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
-
+    position: relative;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
     .card-img-top {
-      height: 200px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
-
-    .card-body {
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
       h5 {
-        font-weight: bold;
-        color: #da9915;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
-    }
-  }
-
-  .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    .row {
-      flex-grow: 1;
-    }
-  }
-
-  // Pagination styling
-  ::ng-deep .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    padding: 1rem 0;
-    list-style-type: none;
-
-    ul {
-      padding: 0;
-    }
-
-    li {
-      margin: 0 0.5rem;
-
-      span,
-      a {
-        color: #da9915 !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
+      .card-text {
+        flex-grow: 1;
+      }
+      .read-more-btn {
+        background-color: #da9915;
+        border: none;
+        color: #fff;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
-        background-color: rgba(215, 228, 229, 0.75) !important;
-        font-size: 1.2rem !important;
-
-        &:hover {
-          background-color: #da9915 !important;
-          color: #fff !important;
-        }
-      }
-
-      &.current a {
-        background-color: #da9915 !important;
-        color: #fff !important;
-      }
-
-      &.disabled a {
-        color: #ccc !important;
+        text-transform: uppercase;
+        font-size: 0.9rem;
       }
     }
+  }
+  .card:nth-child(odd) .card-overlay {
+    background-color: #d10600;
   }
 }

@@ -1,4 +1,12 @@
-<section class="hero"><h1 #title>Vision</h1></section>
+<section
+  class="hero"
+  [ngStyle]="{
+    '--hero-bg': 'url(' + visionData?.heroBgUrl + ')',
+    '--hero-small-bg': 'url(' + visionData?.heroSmallBgUrl + ')'
+  }"
+>
+  <h1 #title>{{ visionData?.h1 }}</h1>
+</section>
 <section class="second-sec">
   <div class="section-desc">
     <img class="mobile-img" src="assets/eye2.svg" alt="" />

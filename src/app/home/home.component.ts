@@ -16,6 +16,7 @@ import {
   AnimationBuilder,
 } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-home',
@@ -60,14 +61,18 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('desc') desc!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
+  homeData: any;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
-    private animationBuilder: AnimationBuilder
+    private animationBuilder: AnimationBuilder,
+    private sanityService: SanityService
   ) {}
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
+      // Delay the setup of IntersectionObserver
       const options = {
         root: null,
         rootMargin: '0px',
@@ -80,15 +85,15 @@ export class HomeComponent implements AfterViewInit {
           if (entry.isIntersecting) {
             this.renderer.setStyle(target, 'visibility', 'visible');
 
-            if (target === this.title.nativeElement) {
+            if (target === this.title?.nativeElement) {
               this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
-            } else if (target === this.button.nativeElement) {
+            } else if (target === this.button?.nativeElement) {
               this.runAnimation(this.button.nativeElement, 'fadeInSlideLeft');
-            } else if (target === this.img.nativeElement) {
+            } else if (target === this.img?.nativeElement) {
               this.runAnimation(this.img.nativeElement, 'fadeInSlideUp');
-            } else if (target === this.desc.nativeElement) {
+            } else if (target === this.desc?.nativeElement) {
               this.runAnimation(this.desc.nativeElement, 'fadeInSlideRight');
-            } else if (target === this.card.nativeElement) {
+            } else if (target === this.card?.nativeElement) {
               this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
             }
           } else {
@@ -98,11 +103,11 @@ export class HomeComponent implements AfterViewInit {
         });
       }, options);
 
-      observer.observe(this.title.nativeElement);
-      observer.observe(this.button.nativeElement);
-      observer.observe(this.img.nativeElement);
-      observer.observe(this.desc.nativeElement);
-      observer.observe(this.card.nativeElement);
+      if (this.title) observer.observe(this.title.nativeElement);
+      if (this.button) observer.observe(this.button.nativeElement);
+      if (this.img) observer.observe(this.img.nativeElement);
+      if (this.desc) observer.observe(this.desc.nativeElement);
+      if (this.card) observer.observe(this.card.nativeElement);
     }
   }
 
@@ -130,5 +135,12 @@ export class HomeComponent implements AfterViewInit {
       default:
         return 'none';
     }
+  }
+
+  ngOnInit(): void {
+    this.sanityService.getHomeData().subscribe((data) => {
+      this.homeData = data;
+      console.log(data);
+    });
   }
 }

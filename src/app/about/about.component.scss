@@ -114,8 +114,13 @@
       padding: 3rem;
       width: calc(100% - 10rem);
       height: auto;
-      img {
-        height: 30rem;
+      .section-img {
+        grid-row: 1;
+        height: 100%;
+        img {
+          width: 50%;
+          height: auto;
+        }
       }
 
       h2 {

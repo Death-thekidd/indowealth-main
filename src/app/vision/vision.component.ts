@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -14,12 +14,13 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-vision',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, CommonModule],
   templateUrl: './vision.component.html',
   styleUrl: './vision.component.scss',
   animations: [
@@ -56,10 +57,13 @@ export class VisionComponent {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
+  visionData: any;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
-    private animationBuilder: AnimationBuilder
+    private animationBuilder: AnimationBuilder,
+    private sanityService: SanityService
   ) {}
 
   ngAfterViewInit() {
@@ -114,5 +118,11 @@ export class VisionComponent {
       default:
         return 'none';
     }
+  }
+
+  ngOnInit() {
+    this.sanityService.getVisionData().subscribe((data) => {
+      this.visionData = data;
+    });
   }
 }

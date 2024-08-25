@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -14,11 +14,12 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-trading',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './trading.component.html',
   styleUrl: './trading.component.scss',
   animations: [
@@ -37,10 +38,13 @@ export class TradingComponent {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
+  tradingData: any;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
-    private animationBuilder: AnimationBuilder
+    private animationBuilder: AnimationBuilder,
+    private sanityService: SanityService
   ) {}
 
   ngAfterViewInit() {
@@ -93,5 +97,12 @@ export class TradingComponent {
       default:
         return 'none';
     }
+  }
+
+  ngOnInit(): void {
+    this.sanityService.getAboutData().subscribe((data) => {
+      this.tradingData = data;
+      console.log(data);
+    });
   }
 }

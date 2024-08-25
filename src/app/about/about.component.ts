@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -14,9 +14,12 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [
@@ -53,10 +56,13 @@ export class AboutComponent {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
+  aboutData: any;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
-    private animationBuilder: AnimationBuilder
+    private animationBuilder: AnimationBuilder,
+    private sanityService: SanityService
   ) {}
 
   ngAfterViewInit() {
@@ -111,5 +117,12 @@ export class AboutComponent {
       default:
         return 'none';
     }
+  }
+
+  ngOnInit(): void {
+    this.sanityService.getAboutData().subscribe((data) => {
+      this.aboutData = data;
+      console.log(data);
+    });
   }
 }

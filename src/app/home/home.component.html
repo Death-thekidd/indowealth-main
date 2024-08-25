@@ -1,13 +1,19 @@
-<section class="hero">
-  <h1 #title>Welcome to Indowealth Group</h1>
-  <button #button class="hero-btn">Get Started</button>
+<section
+  class="hero"
+  [ngStyle]="{
+    '--hero-bg': 'url(' + homeData?.heroBgUrl + ')',
+    '--hero-small-bg': 'url(' + homeData?.heroSmallBgUrl + ')'
+  }"
+>
+  <h1 #title>{{ homeData?.h1 }}</h1>
+  <button #btn class="hero-btn">{{ homeData?.btnText }}</button>
 </section>
 
 <section class="second-sec">
   <div #card class="card">
     <div #img class="section-img"><img src="assets/logo.png" alt="" /></div>
     <div #desc class="section-desc">
-      <h2>About Us</h2>
+      <h2>{{ homeData?.h2 }}</h2>
       <p>
         The IndoWealth Group is made up of, and administered by, a group of
         professionals across multiple jurisdictions with a large range of

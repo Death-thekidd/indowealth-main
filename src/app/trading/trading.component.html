@@ -1,4 +1,12 @@
-<section class="hero"><h1 #title>$IWT</h1></section>
+<section
+  class="hero"
+  [ngStyle]="{
+    '--hero-bg': 'url(' + tradingData?.heroBgUrl + ')',
+    '--hero-small-bg': 'url(' + tradingData?.heroSmallBgUrl + ')'
+  }"
+>
+  <h1 #title>{{ tradingData?.h1 }}</h1>
+</section>
 <section class="second-sec">
   <div #card class="card">
     <div class="section-desc">
