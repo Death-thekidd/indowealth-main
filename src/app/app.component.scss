@@ -52,6 +52,12 @@
     }
     .term {
       font-family: "source-sans-pro-bold";
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff,
+          0 0 120px #fff;
+      }
     }
 
     @media (min-width: 768px) {

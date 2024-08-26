@@ -133,6 +133,11 @@
         font-weight: bold;
         font-family: "source-sans-pro-bold";
         text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+          text-shadow: 0 0 10px #da9915, 0 0 20px #da9915, 0 0 40px #da9915,
+            0 0 80px #da9915, 0 0 120px #da9915;
+        }
       }
     }
   }
