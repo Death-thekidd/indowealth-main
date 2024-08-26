@@ -18,17 +18,11 @@
       <li>
         <a routerLink="/home">Home</a>
       </li>
-      <li
-        class="has-submenu"
-        (click)="toggleDesktopSubmenu()"
-        [class.open]="isDesktopSubmenuOpen"
-      >
-        <a [class.active]="isDesktopSubmenuOpen">
-          <span class="text">Who Are We</span>
-        </a>
-        <ul class="submenu" [class.open]="isDesktopSubmenuOpen">
+      <li class="has-submenu">
+        <a> Who We Are </a>
+        <ul class="submenu">
           <li>
-            <a routerLink="/trading">$IWT</a>
+            <a routerLink="">OUR TEAM</a>
           </li>
           <li>
             <a routerLink="/mission">Mission</a>
@@ -38,15 +32,36 @@
           </li>
         </ul>
       </li>
-      <!-- Other nav items -->
-      <li>
+      <li class="has-submenu">
         <a routerLink="/home">What We Do</a>
+        <ul class="submenu">
+          <li>
+            <a routerLink="/trading">$IWT</a>
+          </li>
+          <li>
+            <a routerLink="">NBC</a>
+          </li>
+        </ul>
       </li>
       <li>
         <a routerLink="/blogs">Blogs</a>
       </li>
-      <li>
-        <a routerLink="/contact">Contact Us</a>
+      <li class="has-submenu">
+        <a routerLink="/contact">Learn More</a>
+        <ul class="submenu">
+          <li>
+            <a routerLink="">WHITEPAPER</a>
+          </li>
+          <li>
+            <a routerLink="">DOCUMENTATION</a>
+          </li>
+          <li>
+            <a routerLink="">FAQ</a>
+          </li>
+          <li>
+            <a routerLink="">CONTACT US</a>
+          </li>
+        </ul>
       </li>
     </ul>
     <div class="social-icons">
@@ -74,7 +89,7 @@
       (click)="toggleMobileSubmenu()"
       [class.open]="isMobileSubmenuOpen"
     >
-      <a>Who Are We</a>
+      <a>Who We Are</a>
       <ul class="sub-menu">
         <li>
           <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>

@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(100vh - 8.8rem);
   width: 100%;
-  background: var(--hero-small-bg-image) no-repeat center center;
+  background: url("/assets/home_hero_mobile.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -44,12 +44,12 @@
 
     &:hover {
       box-shadow: 0 0 15px rgba(218, 153, 21, 0.6); /* Glow effect matching the button color */
-      transform: scale(1.05); /* Slightly expand the button */
+      transform: scale(1.05); /* Slightly expand the buton */
     }
   }
 
   @media (min-width: 768px) {
-    background: var(--hero-small-bg-image) no-repeat center center;
+    background: url("/assets/home_hero.png") no-repeat center center;
     background-size: cover;
     min-height: calc(100vh - 6rem);
     align-items: center;

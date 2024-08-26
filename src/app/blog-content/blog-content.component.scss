@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(50vh - 8.8rem);
   width: 100%;
-  background: url("/assets/tokens_bg.svg") no-repeat center center;
+  background: url("/assets/token_hero_mobile.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,7 +19,8 @@
     margin-bottom: 1.5rem;
   }
   @media (min-width: 768px) {
-    background: url("/assets/token_big_bg.jpg") no-repeat center center center;
+    background: url("/assets/blog_hero.jpg") no-repeat center center;
+    background-size: cover;
     min-height: calc(50vh - 10rem);
     align-items: flex-start;
     text-align: left;

@@ -5,7 +5,10 @@
     '--hero-small-bg': 'url(' + tradingData?.heroSmallBgUrl + ')'
   }"
 >
-  <h1 #title>{{ tradingData?.h1 }}</h1>
+  <h1 class="d-flex flex-row gap-4 align-items-center" #title>
+    <img width="80" height="80" src="assets/token.svg" alt="" />
+    {{ tradingData?.h1 }}
+  </h1>
 </section>
 <section class="second-sec">
   <div #card class="card">

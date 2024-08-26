@@ -118,7 +118,7 @@
             text-decoration: none;
             font-size: 1.5rem;
             color: #fff;
-            font-family: "source-sans-pro";
+            font-family: "source-sans-pro-bold";
 
             .text {
               position: relative;
@@ -127,27 +127,30 @@
               align-items: center;
               font-size: 1.5rem;
               color: #fff;
-              font-family: "source-sans-pro";
-            }
+              font-family: "source-sans-pro-bold";
 
-            &.active {
-              background-color: #da9915; /* Yellow background for active item */
+              &:hover {
+                color: #da9915;
+              }
             }
-
-            &.active + .submenu {
-              display: block;
-              position: fixed;
-              top: 6rem; /* Position submenu under the main header */
-              left: 0;
-              width: 100%;
-              background-color: #da9915; /* Yellow background for submenu */
-              z-index: 999; /* Ensure it's above other content */
-              border-top: 0.5rem solid #da9915; /* Visual connection with active item */
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            }
+          }
+          &:hover .submenu,
+          .sub-menu:hover {
+            display: flex !important;
+            flex-direction: column;
+            max-height: none;
+            opacity: 1;
+            justify-content: space-around;
+            position: absolute;
+            left: 0;
+            background-color: #da9915; /* Yellow background for submenu */
+            z-index: 999; /* Ensure it's above other content */
+            border-top: 0.5rem solid #da9915; /* Visual connection with active item */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           }
 
           .submenu {
+            min-width: 100%;
             display: none;
             padding: 1rem 0;
             transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -156,16 +159,15 @@
             overflow: hidden;
             background-color: #da9915; /* Yellow background for submenu */
 
-            &.open {
-              display: flex !important;
-              flex-direction: row;
-              max-height: none;
-              opacity: 1;
-              justify-content: space-around; /* Arrange items in a row */
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            }
-
             li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-bottom: 0.5px solid #fff;
+              &:last-child {
+                border-bottom: none;
+              }
+              margin: 0 1rem;
               a {
                 display: flex;
                 align-items: center;
@@ -177,32 +179,6 @@
               }
             }
           }
-
-          &.has-submenu.open .submenu {
-            display: flex;
-            height: auto;
-            opacity: 1;
-          }
-        }
-      }
-
-      .search {
-        margin-right: 2rem;
-
-        input {
-          padding: 0.5rem 1rem;
-          font-size: 1.6rem;
-        }
-      }
-
-      .auth-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-right: 2rem;
-
-        a {
-          font-size: 1rem;
-          cursor: pointer;
         }
       }
 
