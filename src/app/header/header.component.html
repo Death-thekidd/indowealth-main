@@ -36,7 +36,7 @@
         <a>What We Do</a>
         <ul class="submenu">
           <li>
-            <a routerLink="/trading">$IWT</a>
+            <a routerLink="/trading">INDOWEALTH TOKEN</a>
           </li>
           <li>
             <a routerLink="">NBC</a>
@@ -44,7 +44,7 @@
         </ul>
       </li>
       <li>
-        <a routerLink="/blogs">Blogs</a>
+        <a routerLink="/blogs">Blog and Announcements</a>
       </li>
       <li class="has-submenu">
         <a>Learn More</a>
@@ -83,21 +83,6 @@
     </li>
     <li
       class="has-submenu"
-      (click)="toggleMobileSubmenu2()"
-      [class.open]="isMobileSubmenuOpen2"
-    >
-      <a>What we do</a>
-      <ul class="sub-menu">
-        <li>
-          <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>
-        </li>
-        <li>
-          <a routerLink="" (click)="toggleMobileNavbar()">NBC</a>
-        </li>
-      </ul>
-    </li>
-    <li
-      class="has-submenu"
       (click)="toggleMobileSubmenu()"
       [class.open]="isMobileSubmenuOpen"
     >
@@ -114,6 +99,22 @@
         </li>
       </ul>
     </li>
+    <li
+      class="has-submenu"
+      (click)="toggleMobileSubmenu2()"
+      [class.open]="isMobileSubmenuOpen2"
+    >
+      <a>What We Do</a>
+      <ul class="sub-menu">
+        <li>
+          <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>
+        </li>
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">NBC</a>
+        </li>
+      </ul>
+    </li>
+
     <li>
       <a routerLink="/blogs" (click)="toggleMobileNavbar()"
         >Blogs & Announcement</a
