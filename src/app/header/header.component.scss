@@ -205,6 +205,14 @@
         display: flex;
         gap: 1rem;
 
+        a {
+          transition: all 0.3s ease;
+          &:hover {
+            box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff,
+              0 0 80px #fff, 0 0 120px #fff;
+          }
+        }
+
         img {
           height: 2.5rem;
         }
