@@ -141,7 +141,6 @@
             max-height: none;
             opacity: 1;
             justify-content: space-around;
-            position: absolute;
             left: 0;
             background-color: #da9915; /* Yellow background for submenu */
             z-index: 999; /* Ensure it's above other content */
@@ -151,9 +150,9 @@
 
           .submenu {
             min-width: 100%;
-            display: none;
+            position: absolute;
             padding: 1rem 0;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
+            transition: max-height 0.3s ease, opacity 0.5s ease;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
@@ -225,8 +224,13 @@
     transition: opacity 0.3s ease;
 
     li {
-      margin: 1rem 0; /* Adjust margin for spacing */
+      margin: 1rem; /* Adjust margin for spacing */
       position: relative;
+      border-bottom: 0.5px solid #fff;
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       a {
         cursor: pointer;
@@ -245,6 +249,15 @@
           list-style: none;
           background: #da9915;
           padding: 0;
+          li {
+            border-bottom: 0.5px solid #fff;
+            &:last-child {
+              border-bottom: none;
+            }
+            a {
+              padding: 1rem 0;
+            }
+          }
         }
 
         &.open .sub-menu {

@@ -6,6 +6,7 @@ import { TradingComponent } from './trading/trading.component';
 import { MissionComponent } from './mission/mission.component';
 import { VisionComponent } from './vision/vision.component';
 import { BlogComponent } from './blog/blog.component';
+import { BlogContentComponent } from './blog-content/blog-content.component';
 
 export const routes: Routes = [
   { redirectTo: 'home', path: '', pathMatch: 'full' },
@@ -23,4 +24,9 @@ export const routes: Routes = [
   { component: MissionComponent, path: 'mission', data: { title: 'Mission' } },
   { component: VisionComponent, path: 'vision', data: { title: 'Vision' } },
   { component: BlogComponent, path: 'blogs', data: { title: 'Blogs' } },
+  {
+    component: BlogContentComponent,
+    path: 'blog-content',
+    data: { title: 'BlogContent' },
+  },
 ];

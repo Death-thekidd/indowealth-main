@@ -12,6 +12,10 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   isMobileNavbarOpen = false;
   isMobileSubmenuOpen = false;
+  isMobileNavbarOpen2 = false;
+  isMobileSubmenuOpen2 = false;
+  isMobileNavbarOpen3 = false;
+  isMobileSubmenuOpen3 = false;
   isDesktopSubmenuOpen = false;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
@@ -19,12 +23,22 @@ export class HeaderComponent {
   toggleMobileNavbar() {
     this.isMobileNavbarOpen = !this.isMobileNavbarOpen;
     if (!this.isMobileNavbarOpen) {
-      this.isMobileSubmenuOpen = false; // Close submenu when navbar is closed
+      this.isMobileSubmenuOpen = false;
+      this.isMobileSubmenuOpen2 = false;
+      this.isMobileSubmenuOpen3 = false;
     }
   }
 
   toggleMobileSubmenu() {
     this.isMobileSubmenuOpen = !this.isMobileSubmenuOpen;
+  }
+
+  toggleMobileSubmenu2() {
+    this.isMobileSubmenuOpen2 = !this.isMobileSubmenuOpen2;
+  }
+
+  toggleMobileSubmenu3() {
+    this.isMobileSubmenuOpen3 = !this.isMobileSubmenuOpen3;
   }
 
   toggleDesktopSubmenu() {

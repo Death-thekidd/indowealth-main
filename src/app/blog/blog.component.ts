@@ -16,11 +16,12 @@ import {
 } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgxPaginationModule, CommonModule],
+  imports: [NgxPaginationModule, CommonModule, RouterModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss',
   animations: [

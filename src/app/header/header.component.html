@@ -33,7 +33,7 @@
         </ul>
       </li>
       <li class="has-submenu">
-        <a routerLink="/home">What We Do</a>
+        <a>What We Do</a>
         <ul class="submenu">
           <li>
             <a routerLink="/trading">$IWT</a>
@@ -47,7 +47,7 @@
         <a routerLink="/blogs">Blogs</a>
       </li>
       <li class="has-submenu">
-        <a routerLink="/contact">Learn More</a>
+        <a>Learn More</a>
         <ul class="submenu">
           <li>
             <a routerLink="">WHITEPAPER</a>
@@ -81,8 +81,20 @@
     <li>
       <a routerLink="/home" (click)="toggleMobileNavbar()">Home</a>
     </li>
-    <li>
-      <a routerLink="" (click)="toggleMobileNavbar()">What we do</a>
+    <li
+      class="has-submenu"
+      (click)="toggleMobileSubmenu2()"
+      [class.open]="isMobileSubmenuOpen2"
+    >
+      <a>What we do</a>
+      <ul class="sub-menu">
+        <li>
+          <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>
+        </li>
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">NBC</a>
+        </li>
+      </ul>
     </li>
     <li
       class="has-submenu"
@@ -92,7 +104,7 @@
       <a>Who We Are</a>
       <ul class="sub-menu">
         <li>
-          <a routerLink="/trading" (click)="toggleMobileNavbar()">$IWT</a>
+          <a routerLink="/trading" (click)="toggleMobileNavbar()">Our Team</a>
         </li>
         <li>
           <a routerLink="/mission" (click)="toggleMobileNavbar()">Mission</a>
@@ -107,8 +119,26 @@
         >Blogs & Announcement</a
       >
     </li>
-    <li>
-      <a routerLink="" (click)="toggleMobileNavbar()">Contact Us</a>
+    <li
+      class="has-submenu"
+      (click)="toggleMobileSubmenu3()"
+      [class.open]="isMobileSubmenuOpen3"
+    >
+      <a>Learn More</a>
+      <ul class="sub-menu">
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">WHITEPAPER</a>
+        </li>
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">DOCUMENTATION</a>
+        </li>
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">FAQ</a>
+        </li>
+        <li>
+          <a routerLink="" (click)="toggleMobileNavbar()">CONTACT US</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

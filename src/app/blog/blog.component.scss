@@ -43,9 +43,6 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
-  .card {
-    max-height: 65.3rem;
-  }
   h2 {
     font-size: 5rem;
     margin-bottom: 1.5rem;
@@ -54,13 +51,23 @@
     font-size: 1.6rem;
     font-family: "source-sans-pro-semi-bold";
   }
-  button {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #da9915;
     width: 13rem;
     height: 4.1rem;
     border-radius: 5px;
     font-family: "source-sans-pro-bold";
     font-size: 1.6rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba(218, 153, 21, 0.6); /* Glow effect matching the button color */
+      transform: scale(1.05); /* Slightly expand the buton */
+    }
   }
   .bg-indo {
     background-color: #d10600;
