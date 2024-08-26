@@ -57,6 +57,7 @@ export class FooterComponent {
   @ViewChild('item2') item2!: ElementRef;
   @ViewChild('item3') item3!: ElementRef;
   @ViewChild('item4') item4!: ElementRef;
+  @ViewChild('item5') item5!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -87,6 +88,8 @@ export class FooterComponent {
               this.runAnimation(this.item3.nativeElement, 'fadeInSlideUp');
             } else if (target === this.item4.nativeElement) {
               this.runAnimation(this.item4.nativeElement, 'fadeInSlideUp');
+            } else if (target === this.item5.nativeElement) {
+              this.runAnimation(this.item5.nativeElement, 'fadeInSlideUp');
             }
           } else {
             // Element is out of view: hide it
@@ -99,6 +102,7 @@ export class FooterComponent {
       observer.observe(this.item2.nativeElement);
       observer.observe(this.item3.nativeElement);
       observer.observe(this.item4.nativeElement);
+      observer.observe(this.item5.nativeElement);
     }
   }
 

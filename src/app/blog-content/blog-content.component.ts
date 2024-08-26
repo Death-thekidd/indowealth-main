@@ -121,7 +121,7 @@ export class BlogContentComponent {
       }, options);
 
       observer.observe(this.title.nativeElement);
-      // observer.observe(this.card.nativeElement);
+      observer.observe(this.card.nativeElement);
     }
   }
 
