@@ -43,13 +43,16 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem;
+  .card {
+    max-height: 65.3rem;
+  }
   h2 {
     font-size: 5rem;
     margin-bottom: 1.5rem;
   }
   p {
     font-size: 1.6rem;
-    font-family: "source-sans-pro";
+    font-family: "source-sans-pro-semi-bold";
   }
   button {
     background-color: #da9915;
@@ -61,10 +64,19 @@
   }
   .bg-indo {
     background-color: #d10600;
+    padding: 3rem 2rem;
   }
   @media (min-width: 768px) {
     background: #fff;
     height: auto;
     padding: 5%;
+    .card {
+      max-height: 42rem;
+    }
+
+    .bg-indo {
+      background-color: #d10600;
+      padding: 4rem 2rem;
+    }
   }
 }

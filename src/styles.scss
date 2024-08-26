@@ -26,6 +26,11 @@
 }
 
 @font-face {
+  font-family: "source-sans-pro-semi-bold";
+  src: url("assets/source-sans-pro/SourceSansPro-Semibold.ttf");
+}
+
+@font-face {
   font-family: "SourceSans3";
   src: url("assets/Source_Sans_3/static/SourceSans3-Regular.ttf");
 }
@@ -48,7 +53,7 @@ html {
 }
 
 p {
-  font-family: "SourceSans3" !important;
+  font-family: "source-sans-pro-semi-bold" !important;
 }
 
 h1,
