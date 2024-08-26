@@ -179,6 +179,7 @@
               &:last-child {
                 border-bottom: none;
               }
+
               margin: 0 1rem;
               a {
                 display: flex;
@@ -186,6 +187,9 @@
                 padding: 0.5rem 2rem;
                 font-size: 1.5rem;
                 color: #fff;
+                &:hover {
+                  color: grey;
+                }
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
               }
