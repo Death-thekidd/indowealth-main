@@ -58,6 +58,9 @@
     border: 1px solid #da9915;
     width: calc(100% - 1.5rem);
     padding: 2rem;
+    .img {
+      display: none;
+    }
   }
 
   .section-desc:last-child {
@@ -98,6 +101,19 @@
       border: 1px solid #da9915;
       padding: 6rem;
       width: calc(100% - 2rem);
+      .img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20rem;
+        height: 20rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border-top-right-radius: 20px;
+        background: url("/assets/token2.jpeg") no-repeat center center;
+        background-size: cover;
+      }
     }
     .section-desc {
       h2 {
