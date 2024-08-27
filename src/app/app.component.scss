@@ -43,9 +43,13 @@
       width: 25rem;
       height: 0px;
       border: 1px solid #ffffff;
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
     span {
       font-family: "source-sans-pro";
+      white-space: nowrap;
     }
     .name {
       font-family: "source-sans-pro-bold";
@@ -68,8 +72,9 @@
       .line {
         width: 60rem;
       }
+      gap: 4rem;
 
-      justify-content: space-between;
+      justify-content: center;
     }
   }
 }
