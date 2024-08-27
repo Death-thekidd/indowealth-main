@@ -73,7 +73,7 @@
     background-color: rgba(215, 228, 229, 0.75);
     box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #da9915;
-    height: 37rem;
+    height: auto;
     padding: 4rem 3rem 3rem 3rem;
     width: calc(100% - 3rem);
     img {
@@ -125,7 +125,7 @@
       box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
       border: 1px solid #da9915;
       padding: 15rem 3rem 3rem 3rem;
-      height: 47rem;
+      height: auto;
       width: calc(100% - 20rem);
     }
   }
