@@ -308,7 +308,7 @@
     block-size: calc-size(auto);
     display: block;
     border: 1px solid #da9915;
-    max-height: 100vh; /* Prevent navbar from growing too tall */
+    max-height: 70vh; /* Prevent navbar from growing too tall */
     padding-bottom: 2rem; /* Optional bottom padding */
     .nav-list {
       opacity: 1;
