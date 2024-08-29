@@ -1,5 +1,5 @@
 .hero {
-  background: none;
+  display: none;
   @media (min-width: 768px) {
     background: url("/assets/blog_hero.jpg") no-repeat center center;
     -webkit-background-size: cover;
