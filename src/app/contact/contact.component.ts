@@ -35,6 +35,7 @@ import { SanityService } from '../sanity.service';
   ],
 })
 export class ContactComponent {
+  @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
   constructor(
@@ -58,8 +59,9 @@ export class ContactComponent {
           if (entry.isIntersecting) {
             // Set visibility to visible before running the animation
             this.renderer.setStyle(target, 'visibility', 'visible');
-
-            if (target === this.card.nativeElement) {
+            if (target === this.title.nativeElement) {
+              this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
+            } else if (target === this.card.nativeElement) {
               this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
             }
           } else {
@@ -68,6 +70,7 @@ export class ContactComponent {
           }
         });
       }, options);
+      observer.observe(this.title.nativeElement);
       observer.observe(this.card.nativeElement);
     }
   }
