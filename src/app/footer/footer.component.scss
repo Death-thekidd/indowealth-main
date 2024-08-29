@@ -19,8 +19,18 @@
       color: #da9915;
       font-size: 2rem;
       font-weight: bold;
+      font-family: "Orbitron-Bold";
       margin-bottom: 1rem;
       white-space: nowrap;
+      a {
+        color: #da9915;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          text-shadow: 0 0 10px #da9915, 0 0 20px #da9915, 0 0 40px #da9915,
+            0 0 80px #da9915, 0 0 120px #da9915;
+        }
+      }
     }
     .item-header.big {
       font-size: 3rem;
