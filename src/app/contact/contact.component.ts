@@ -19,7 +19,7 @@ import { SanityService } from '../sanity.service';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   animations: [
