@@ -1,8 +1,8 @@
 .hero {
   min-height: calc(50vh - 8.8rem);
   width: 100%;
-  background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-    url("/assets/token_hero_mobile.jpg") no-repeat center center;
+  background: linear-gradient url("/assets/token_hero_mobile.jpg") no-repeat
+    center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
