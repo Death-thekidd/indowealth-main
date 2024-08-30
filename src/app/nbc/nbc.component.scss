@@ -2,7 +2,7 @@
   min-height: calc(50vh - 8.8rem);
   width: 100%;
   background: linear-gradient(rgba(54, 29, 29, 0.6), rgba(54, 29, 29, 0.6)),
-    url("/assets/token_hero_mobile.jpg") no-repeat center center;
+    url("/assets/nbc_hero.JPG") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,7 +25,7 @@
     }
   }
   @media (min-width: 768px) {
-    background: url("/assets/token_hero.jpg") no-repeat center center;
+    background: url("/assets/nbc_hero.JPG") no-repeat center center;
     background-size: cover;
     min-height: calc(50vh - 10rem);
     align-items: flex-start;
