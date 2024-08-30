@@ -76,6 +76,15 @@
     justify-content: center;
     flex-direction: column;
     margin-bottom: 4rem;
+    .desc-img {
+      width: 100%;
+    }
+    i {
+      font-family: "source-sans-pro";
+      margin-top: 0.3rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
     h2 {
       font-weight: bold;
       font-size: 2rem;
@@ -126,6 +135,9 @@
     .section-desc {
       h2 {
         font-size: 5rem;
+      }
+      .desc-img {
+        width: 70%;
       }
       li,
       p {

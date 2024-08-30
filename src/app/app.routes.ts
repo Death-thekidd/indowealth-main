@@ -8,6 +8,7 @@ import { VisionComponent } from './vision/vision.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogContentComponent } from './blog-content/blog-content.component';
 import { ContactComponent } from './contact/contact.component';
+import { NbcComponent } from './nbc/nbc.component';
 
 export const routes: Routes = [
   { redirectTo: 'home', path: '', pathMatch: 'full' },
@@ -34,5 +35,10 @@ export const routes: Routes = [
     component: ContactComponent,
     path: 'contact',
     data: { title: 'Contact' },
+  },
+  {
+    component: NbcComponent,
+    path: 'nbc',
+    data: { title: 'Nbc' },
   },
 ];
