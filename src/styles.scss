@@ -59,10 +59,20 @@ html {
 
 p {
   font-family: "source-sans-pro-semi-bold" !important;
-  text-align: justify !important;
+  line-height: 3rem !important;
   @media (max-width: 768px) {
     font-size: 1.7rem !important;
   }
+}
+
+li {
+  line-height: 3rem !important;
+}
+
+p::after {
+  content: "";
+  display: inline-block;
+  width: 100%; /* Forces the last line to justify better */
 }
 
 h1,
