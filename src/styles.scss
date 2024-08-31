@@ -69,6 +69,13 @@ li {
   line-height: 3rem !important;
 }
 
+ul,
+ol {
+  padding-left: 1rem !important; /* Removes left padding */
+  margin-left: 0 !important; /* Removes left margin */
+  list-style-position: inside !important; /* Ensures bullets stay inside the list's boundary */
+}
+
 p::after {
   content: "";
   display: inline-block;
