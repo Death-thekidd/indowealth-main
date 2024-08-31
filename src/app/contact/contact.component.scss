@@ -184,9 +184,10 @@
         align-self: center;
         width: 100%;
         height: 3.7rem;
+        transition: all 0.3s ease;
         &:hover {
-          box-shadow: 0 0 10px #da9915, 0 0 20px #da9915, 0 0 40px #da9915,
-            0 0 80px #da9915, 0 0 120px #da9915;
+          box-shadow: 0 5px 15px #da9915;
+          transform: translateY(-0.5rem);
         }
       }
     }
@@ -318,6 +319,11 @@
           width: 19.1rem;
           height: 5rem;
           font-size: 2rem;
+          transition: all 0.3s ease;
+          &:hover {
+            box-shadow: 0 5px 15px #da9915;
+            transform: translateY(-0.5rem);
+          }
         }
       }
     }

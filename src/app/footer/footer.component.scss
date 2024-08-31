@@ -26,9 +26,16 @@
         color: #da9915;
         text-decoration: none;
         cursor: pointer;
+        transition: all 0.3s ease;
         &:hover {
-          text-shadow: 0 0 10px #da9915, 0 0 20px #da9915, 0 0 40px #da9915,
-            0 0 80px #da9915, 0 0 120px #da9915;
+          text-shadow: 0 5px 15px #da9915;
+          transform: translateY(-0.5rem);
+        }
+        @media (min-width: 768px) {
+          &:hover {
+            text-shadow: 0 0 10px #da9915, 0 0 20px #da9915, 0 0 40px #da9915,
+              0 0 80px #da9915, 0 0 120px #da9915;
+          }
         }
       }
     }
