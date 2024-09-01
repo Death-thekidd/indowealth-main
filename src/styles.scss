@@ -59,14 +59,16 @@ html {
 
 p {
   font-family: "source-sans-pro-semi-bold" !important;
-  line-height: 3rem !important;
+  line-height: 5rem !important;
   @media (max-width: 768px) {
     font-size: 1.7rem !important;
+    line-height: 3.8rem !important;
   }
 }
-
-li {
-  line-height: 3rem !important;
+.card {
+  li {
+    line-height: 3.9rem !important;
+  }
 }
 
 ul,

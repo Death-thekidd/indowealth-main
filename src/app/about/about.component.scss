@@ -20,9 +20,9 @@
     margin-left: 7%;
   }
   @media (min-width: 768px) {
-    background: url("/assets/about_hero.jpg") no-repeat center center;
+    background: url("/assets/about_hero.jpg") no-repeat;
     background-size: cover;
-    min-height: calc(50vh - 10rem);
+    min-height: calc(60vh - 10rem);
     align-items: flex-start;
     text-align: left;
     padding-left: 3rem;
@@ -114,7 +114,6 @@
 
     .card {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 1fr);
       border-radius: 16px;
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);

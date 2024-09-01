@@ -24,6 +24,7 @@
     img {
       height: 80px;
       width: 80px;
+      border-radius: 5px;
     }
   }
   @media (min-width: 768px) {
@@ -41,6 +42,7 @@
       img {
         height: 160px;
         width: 160px;
+        border-radius: 5px;
       }
     }
   }
@@ -131,7 +133,6 @@
       }
       li,
       p {
-        width: 60%;
         font-size: 2.4rem;
         line-height: 1.5;
       }
