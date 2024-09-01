@@ -143,9 +143,9 @@
   }
   @media (min-width: 768px) {
     background: #fff;
-    height: 100vh;
+    height: auto;
     flex-direction: row;
-    padding: 0 3rem;
+    padding: 10rem 3rem;
     .card {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
@@ -159,7 +159,8 @@
       width: calc(100% - 10rem);
       height: 80%;
       img {
-        height: 35rem;
+        width: 80%;
+        height: auto;
       }
     }
     .section-img {
