@@ -67,7 +67,10 @@ p {
 }
 .card {
   li {
-    line-height: 3.9rem !important;
+    line-height: 5rem !important;
+    @media (max-width: 768px) {
+      line-height: 3.9rem !important;
+    }
   }
 }
 
