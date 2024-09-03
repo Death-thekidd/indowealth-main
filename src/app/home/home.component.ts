@@ -138,9 +138,9 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.sanityService.getHomeData().subscribe((data) => {
-      this.homeData = data;
-      console.log(data);
-    });
+    // this.sanityService.getHomeData().subscribe((data) => {
+    //   this.homeData = data;
+    //   console.log(data);
+    // });
   }
 }

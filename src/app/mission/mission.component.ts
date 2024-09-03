@@ -121,9 +121,9 @@ export class MissionComponent {
 
   ngOnInit() {
     // Fetch mission data
-    this.sanityService.getMissionData().subscribe((data) => {
-      this.missionData = data;
-      console.log(data);
-    });
+    // this.sanityService.getMissionData().subscribe((data) => {
+    //   this.missionData = data;
+    //   console.log(data);
+    // });
   }
 }

@@ -100,9 +100,9 @@ export class TradingComponent {
   }
 
   ngOnInit(): void {
-    this.sanityService.getTradingData().subscribe((data) => {
-      this.tradingData = data;
-      console.log(data);
-    });
+    // this.sanityService.getTradingData().subscribe((data) => {
+    //   this.tradingData = data;
+    //   console.log(data);
+    // });
   }
 }

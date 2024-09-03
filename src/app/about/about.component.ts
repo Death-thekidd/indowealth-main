@@ -120,9 +120,9 @@ export class AboutComponent {
   }
 
   ngOnInit(): void {
-    this.sanityService.getAboutData().subscribe((data) => {
-      this.aboutData = data;
-      console.log(data);
-    });
+    // this.sanityService.getAboutData().subscribe((data) => {
+    //   this.aboutData = data;
+    //   console.log(data);
+    // });
   }
 }

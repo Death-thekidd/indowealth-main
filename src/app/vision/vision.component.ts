@@ -121,8 +121,8 @@ export class VisionComponent {
   }
 
   ngOnInit() {
-    this.sanityService.getVisionData().subscribe((data) => {
-      this.visionData = data;
-    });
+    // this.sanityService.getVisionData().subscribe((data) => {
+    //   this.visionData = data;
+    // });
   }
 }
