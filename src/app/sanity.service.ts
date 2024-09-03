@@ -31,7 +31,13 @@ export class SanityService {
       _id,
       title,
       slug,
-      mainImage{
+      mobileImage{
+        asset->{
+          _id,
+          url
+        }
+      },
+      desktopImage{
         asset->{
           _id,
           url
@@ -51,7 +57,13 @@ export class SanityService {
       _id,
       title,
       slug,
-      mainImage{
+      mobileImage{
+        asset->{
+          _id,
+          url
+        }
+      },
+      desktopImage{
         asset->{
           _id,
           url

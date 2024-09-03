@@ -8,8 +8,16 @@
 
     <!-- Blog Content (shown when content is loaded) -->
     <ng-container *ngIf="!isLoading">
-      <img class="mobile-img" [src]="blog?.mobileImage" alt="{{ blog?.title }}" />
-      <img class="desktop-img" [src]="blog?.desktopImage" alt="{{ blog?.title }}" />
+      <img
+        class="mobile-img"
+        [src]="blog?.mobileImage.asset.url"
+        alt="{{ blog?.title }}"
+      />
+      <img
+        class="desktop-img"
+        [src]="blog?.desktopImage"
+        alt="{{ blog?.title }}"
+      />
       <div #card class="card">
         <h2>{{ blog?.title }}</h2>
         <p>{{ blog?.content }}</p>
