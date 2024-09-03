@@ -5,6 +5,7 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -50,6 +51,7 @@
 
   @media (min-width: 768px) {
     background: url("/assets/home_hero.png") no-repeat center center;
+    background-attachment: fixed;
     background-size: cover;
     min-height: calc(100vh - 6rem);
     align-items: center;
