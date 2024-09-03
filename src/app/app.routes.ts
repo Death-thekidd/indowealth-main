@@ -28,7 +28,7 @@ export const routes: Routes = [
   { component: BlogComponent, path: 'blogs', data: { title: 'Blogs' } },
   {
     component: BlogContentComponent,
-    path: 'blog-content',
+    path: 'blogs/:slug',
     data: { title: 'BlogContent' },
   },
   {
