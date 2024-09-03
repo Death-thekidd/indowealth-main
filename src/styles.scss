@@ -81,6 +81,11 @@ ol {
   list-style-position: inside !important; /* Ensures bullets stay inside the list's boundary */
 }
 
+ul.navlist {
+  padding-left: 1rem !important; /* Removes left padding */
+  margin-left: 1rem !important;
+}
+
 p::after {
   content: "";
   display: inline-block;
