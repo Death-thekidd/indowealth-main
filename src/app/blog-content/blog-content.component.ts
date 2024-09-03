@@ -16,11 +16,13 @@ import {
 } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
+import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgxPaginationModule, CommonModule],
+  imports: [NgxPaginationModule, CommonModule, SkeletonPreviewComponent],
   templateUrl: './blog-content.component.html',
   styleUrl: './blog-content.component.scss',
   animations: [
@@ -57,40 +59,23 @@ export class BlogContentComponent {
   @ViewChild('title') title!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
-  blogs: any[] = [];
-  page: number = 1;
-  totalBlogs: number = 0;
-  blogsPerPage: number = 4;
+  blog: any;
+  isLoading = true;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getTotalBlogs();
-    this.getBlogs(this.page);
-  }
-
-  getTotalBlogs() {
-    this.sanityService.fetchTotalPostsCount().then((count: number) => {
-      this.totalBlogs = count;
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this.sanityService.getPostBySlug(slug as string).subscribe((data) => {
+      this.blog = data;
+      this.isLoading = false;
     });
-  }
-
-  getBlogs(page: number) {
-    this.sanityService
-      .fetchPosts(page, this.blogsPerPage)
-      .then((posts: any[]) => {
-        this.blogs = posts;
-      });
-  }
-
-  onPageChange(newPage: number) {
-    this.page = newPage;
-    this.getBlogs(this.page);
   }
 
   ngAfterViewInit() {

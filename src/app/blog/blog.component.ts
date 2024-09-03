@@ -17,11 +17,17 @@ import {
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
+import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgxPaginationModule, CommonModule, RouterModule],
+  imports: [
+    NgxPaginationModule,
+    CommonModule,
+    RouterModule,
+    SkeletonPreviewComponent,
+  ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss',
   animations: [
@@ -62,6 +68,7 @@ export class BlogComponent {
   page: number = 1;
   totalBlogs: number = 0;
   blogsPerPage: number = 4;
+  isLoading = true;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -71,14 +78,7 @@ export class BlogComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getTotalBlogs();
     this.getBlogs(this.page);
-  }
-
-  getTotalBlogs() {
-    this.sanityService.fetchTotalPostsCount().then((count: number) => {
-      this.totalBlogs = count;
-    });
   }
 
   getBlogs(page: number) {
@@ -86,6 +86,7 @@ export class BlogComponent {
       .fetchPosts(page, this.blogsPerPage)
       .then((posts: any[]) => {
         this.blogs = posts;
+        this.isLoading = false;
       });
   }
 

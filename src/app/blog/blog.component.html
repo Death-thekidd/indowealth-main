@@ -3,132 +3,48 @@
 </section>
 <section class="second-sec">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full gap-y-14">
-    <!-- <div
-      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
-    >
-      <div class="relative md:w-1/2">
-        <img
-          src="assets/blog.png"
-          alt="City skyline"
-          class="w-full h-full object-cover"
-        />
-        <h2
-          class="absolute bottom-4 left-4 text-3xl font-bold text-white px-2 py-1 rounded"
-        >
-          BLOGTITLE
-        </h2>
-      </div>
-      <div
-        class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
-      >
-        <p class="text-base mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea.
-        </p>
-        <div class="flex justify-end">
-          <a routerLink="/blog-content" class="px-4 py-2 rounded-lg"
-            >Read More</a
-          >
-        </div>
-      </div>
-    </div>
+    <!-- Skeletons to show while loading -->
+    <ng-container *ngIf="isLoading; else blogList">
+      <spartan-skeleton-preview
+        class="flex items-center p-4 md:m-4 w-full space-x-4"
+      ></spartan-skeleton-preview>
+      <spartan-skeleton-preview
+        class="flex items-center p-4 md:m-4 w-full space-x-4"
+      ></spartan-skeleton-preview>
+    </ng-container>
 
-    <div
-      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
-    >
-      <div class="relative md:w-1/2">
-        <img
-          src="assets/blog.png"
-          alt="City skyline"
-          class="w-full h-full object-cover"
-        />
-        <h2
-          class="absolute bottom-4 left-4 text-3xl font-bold text-white px-2 py-1 rounded"
-        >
-          BLOGTITLE
-        </h2>
-      </div>
+    <!-- Blog List -->
+    <ng-template #blogList>
       <div
-        class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
+        class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
+        *ngFor="let blog of blogs"
       >
-        <p class="text-base mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea.
-        </p>
-        <div class="flex justify-end">
-          <a routerLink="/blog-content" class="px-4 py-2 rounded-lg">
-            Read More
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
-    >
-      <div class="relative md:w-1/2">
-        <img
-          src="assets/blog.png"
-          alt="City skyline"
-          class="w-full h-full object-cover"
-        />
-        <h2
-          class="absolute bottom-4 left-4 text-3xl font-bold text-white px-2 py-1 rounded"
-        >
-          BLOGTITLE
-        </h2>
-      </div>
-      <div
-        class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
-      >
-        <p class="text-base mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea.
-        </p>
-        <div class="flex justify-end">
-          <a routerLink="/blog-content" class="px-4 py-2 rounded-lg"
-            >Read More</a
+        <div class="relative md:w-1/2">
+          <img
+            [src]="blog.mainImage.asset.url"
+            alt="{{ blog.title }}"
+            class="w-full h-full object-cover"
+          />
+          <h2
+            class="absolute bottom-4 left-4 text-3xl font-bold text-white px-2 py-1 rounded"
           >
+            {{ blog.title }}
+          </h2>
         </div>
-      </div>
-    </div>
-
-    <div
-      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
-    >
-      <div class="relative md:w-1/2">
-        <img
-          src="assets/blog.png"
-          alt="City skyline"
-          class="w-full h-full object-cover"
-        />
-        <h2
-          class="absolute bottom-4 left-4 text-3xl font-bold text-white px-2 py-1 rounded"
+        <div
+          class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
         >
-          BLOGTITLE
-        </h2>
-      </div>
-      <div
-        class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
-      >
-        <p class="text-base mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea.
-        </p>
-        <div class="flex justify-end">
-          <a routerLink="/blog-content" class="px-4 py-2 rounded-lg"
-            >Read More</a
-          >
+          <p class="text-base mb-6">{{ blog.body | slice : 0 : 150 }}...</p>
+          <div class="flex justify-end">
+            <a
+              [routerLink]="['/blog-content', blog.slug]"
+              class="px-4 py-2 rounded-lg"
+            >
+              Read More
+            </a>
+          </div>
         </div>
       </div>
-    </div> -->
+    </ng-template>
   </div>
 </section>

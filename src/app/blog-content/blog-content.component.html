@@ -1,37 +1,19 @@
-<section class="hero"><h1 #title>Blog & Announcements</h1></section>
+<section class="hero">
+  <h1 #title>Blog & Announcements</h1>
+</section>
 <section class="second-sec">
   <div class="section-desc">
-    <img class="mobile-img" src="assets/blog.png" alt="" />
-    <img class="desktop-img" src="assets/mission_hero.jpg" alt="" />
-    <div #card class="card">
-      <h2>Blog Title</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        eaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex eaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex eaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex eaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea
-      </p>
-    </div>
-  </div>
+    <!-- Skeleton Loader (shown when blog content is loading) -->
+    <spartan-skeleton-preview *ngIf="isLoading"></spartan-skeleton-preview>
 
-  <!-- Pagination Controls -->
-  <!-- <pagination-controls
-      class="pagination"
-      (pageChange)="onPageChange($event)"
-    ></pagination-controls> -->
+    <!-- Blog Content (shown when content is loaded) -->
+    <ng-container *ngIf="!isLoading">
+      <img class="mobile-img" [src]="blog?.mobileImage" alt="{{ blog?.title }}" />
+      <img class="desktop-img" [src]="blog?.desktopImage" alt="{{ blog?.title }}" />
+      <div #card class="card">
+        <h2>{{ blog?.title }}</h2>
+        <p>{{ blog?.content }}</p>
+      </div>
+    </ng-container>
+  </div>
 </section>

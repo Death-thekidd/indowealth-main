@@ -45,10 +45,29 @@ export class SanityService {
     return this.sanityClient.fetch(query).finally(() => this.setLoading(false));
   }
 
-  fetchTotalPostsCount(): Promise<number> {
+  getPostBySlug(slug: string): Observable<any> {
     this.setLoading(true);
-    const query = `count(*[_type == "post"])`;
-    return this.sanityClient.fetch(query).finally(() => this.setLoading(false));
+    const query = `*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      mainImage{
+        asset->{
+          _id,
+          url
+        }
+      },
+      body,
+      "authorName": author->name,
+      publishedAt
+    }`;
+
+    return from(this.sanityClient.fetch(query, { slug })).pipe(
+      map((data) => {
+        this.setLoading(false);
+        return data;
+      })
+    );
   }
 
   getHomeData(): Observable<any> {

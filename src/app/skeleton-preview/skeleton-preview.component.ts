@@ -6,11 +6,22 @@ import { HlmSkeletonComponent } from '@spartan-ng/ui-skeleton-helm';
   standalone: true,
   imports: [HlmSkeletonComponent],
   template: `
-    <div class="flex items-center p-4 m-4 w-fit space-x-4">
-      <hlm-skeleton class="w-12 h-12 rounded-full" />
-      <div class="space-y-2">
-        <hlm-skeleton class="h-4 w-[250px]" />
-        <hlm-skeleton class="h-4 w-[200px]" />
+    <div
+      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card h-[40rem]"
+    >
+      <div class="relative md:w-1/2">
+        <hlm-skeleton class="w-full h-full object-cover"></hlm-skeleton>
+      </div>
+      <div
+        class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
+      >
+        <div class="space-y-2 mb-6">
+          <hlm-skeleton class="h-4 w-[250px]"></hlm-skeleton>
+          <hlm-skeleton class="h-4 w-[200px]"></hlm-skeleton>
+        </div>
+        <div class="flex justify-end">
+          <hlm-skeleton class="h-10 w-[100px] rounded-lg"></hlm-skeleton>
+        </div>
       </div>
     </div>
   `,
