@@ -1,0 +1,103 @@
+.hero {
+  min-height: calc(50vh - 8.8rem);
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/document_hero_mobile.JPG") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  h1 {
+    width: 25.7rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    margin-left: 7%;
+    white-space: nowrap;
+  }
+  @media (min-width: 768px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/assets/document_hero.JPG") no-repeat center center;
+    background-size: cover;
+    min-height: calc(50vh - 10rem);
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 8rem;
+    h1 {
+      font-size: 10rem;
+      width: 49.5rem;
+      margin-left: 0;
+    }
+  }
+}
+
+.second-sec {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+
+    background: #d10600;
+    color: #fff;
+    .name {
+      font-size: 1.2rem;
+      font-family: "source-sans-pro" !important;
+      display: inline-block;
+      width: 70%;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #da9915;
+      width: 10rem;
+      height: 4.1rem;
+      border-radius: 5px;
+      font-family: "source-sans-pro-bold";
+      font-size: 1.2rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &:hover {
+        box-shadow: 0 0 15px rgba(218, 153, 21, 0.6); /* Glow effect matching the button color */
+        transform: scale(1.05); /* Slightly expand the buton */
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    background: #fff;
+    height: auto;
+    padding: 5%;
+    .card {
+      padding: 2rem 4rem;
+      .name {
+        font-size: 2.4rem;
+      }
+      a {
+        width: 13rem;
+        height: 4.1rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

@@ -10,6 +10,8 @@ import { BlogContentComponent } from './blog-content/blog-content.component';
 import { ContactComponent } from './contact/contact.component';
 import { NbcComponent } from './nbc/nbc.component';
 import { FaqComponent } from './faq/faq.component';
+import { TeamComponent } from './team/team.component';
+import { DocumentComponent } from './document/document.component';
 
 export const routes: Routes = [
   { redirectTo: 'home', path: '', pathMatch: 'full' },
@@ -46,5 +48,15 @@ export const routes: Routes = [
     component: FaqComponent,
     path: 'faq',
     data: { title: 'Faq' },
+  },
+  {
+    component: TeamComponent,
+    path: 'team',
+    data: { title: 'Team' },
+  },
+  {
+    component: DocumentComponent,
+    path: 'document',
+    data: { title: 'Document' },
   },
 ];

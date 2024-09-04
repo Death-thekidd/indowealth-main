@@ -1,0 +1,14 @@
+<section class="hero">
+  <h1 #title>DOCUMENTATION</h1>
+</section>
+<section class="second-sec">
+  <div class="grid grid-cols-1 w-full gap-y-6">
+    <div
+      class="flex flex-row dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
+      *ngFor="let document of documents"
+    >
+      <span class="name"> {{ document.title }}</span>
+      <a href="" class="view">View Document</a>
+    </div>
+  </div>
+</section>

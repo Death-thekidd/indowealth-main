@@ -22,7 +22,7 @@
         <a> Who We Are </a>
         <ul class="submenu">
           <li>
-            <a routerLink="">OUR TEAM</a>
+            <a routerLink="/team">OUR TEAM</a>
           </li>
           <li>
             <a routerLink="/mission">Mission</a>
@@ -53,7 +53,7 @@
             <a routerLink="">WHITEPAPER</a>
           </li>
           <li>
-            <a routerLink="">DOCUMENTATION</a>
+            <a routerLink="/document">DOCUMENTATION</a>
           </li>
           <li>
             <a routerLink="/faq">FAQ</a>
@@ -96,7 +96,7 @@
       <a>Who We Are</a>
       <ul class="sub-menu">
         <li>
-          <a routerLink="/trading" (click)="toggleMobileNavbar()">Our Team</a>
+          <a routerLink="/team" (click)="toggleMobileNavbar()">Our Team</a>
         </li>
         <li>
           <a routerLink="/mission" (click)="toggleMobileNavbar()">Mission</a>
@@ -138,7 +138,9 @@
           <a routerLink="" (click)="toggleMobileNavbar()">WHITEPAPER</a>
         </li>
         <li>
-          <a routerLink="" (click)="toggleMobileNavbar()">DOCUMENTATION</a>
+          <a routerLink="/document" (click)="toggleMobileNavbar()"
+            >DOCUMENTATION</a
+          >
         </li>
         <li>
           <a routerLink="/faq" (click)="toggleMobileNavbar()">FAQ</a>
