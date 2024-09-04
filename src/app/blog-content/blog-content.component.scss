@@ -58,6 +58,7 @@
     display: block;
     width: calc(100%);
     z-index: 900;
+    border-radius: 8px;
     transform: translateY(5%);
   }
   .desktop-img {
@@ -113,6 +114,7 @@
       display: block;
       width: calc(100% - 15rem);
       z-index: 900;
+      border-radius: 20px;
       transform: translateY(15%);
     }
     .mobile-img {
