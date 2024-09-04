@@ -1,0 +1,214 @@
+.hero {
+  min-height: calc(50vh - 8.8rem);
+  width: 100%;
+  background: url("/assets/faq_hero_mobile.JPG") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  h1 {
+    width: 25.7rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    margin-left: 7%;
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  @media (min-width: 768px) {
+    background: url("/assets/faq_hero.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: calc(50vh - 10rem);
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 8rem;
+    h1 {
+      font-size: 10rem;
+      width: 49.5rem;
+      margin-left: 0;
+      img {
+        height: 80px;
+        width: 80px;
+      }
+    }
+  }
+}
+
+.second-sec {
+  background: #fff;
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card {
+    border-radius: 6px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(215, 228, 229, 0.75);
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #da9915;
+    width: calc(100% - 1.5rem);
+    padding: 2rem;
+    .img {
+      display: none;
+    }
+  }
+
+  .section-desc:last-child {
+    margin: 0;
+  }
+  .section-desc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    .desc-img {
+      width: 100%;
+    }
+    sup {
+      transition: all 0.3s ease;
+      padding: 0;
+      background: none;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      a {
+        padding: 0;
+        color: #da9915;
+      }
+    }
+    i {
+      font-family: "source-sans-pro";
+      margin-top: 0.3rem;
+      font-size: 1.3rem;
+      margin-bottom: 4rem;
+    }
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      color: #da9915;
+      text-align: start;
+    }
+    .table-head {
+      font-family: "source-sans-pro-bold";
+      font-size: 2.3rem;
+      display: inline-block;
+    }
+    .table {
+      font-family: "source-sans-pro-semi-bold";
+      font-size: 1.2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1.5fr;
+      width: 100%;
+      border: 1px solid #000;
+      .item {
+        padding: 1rem 0.5rem 1rem 1rem;
+        border: 1px solid #000;
+        text-align: start;
+        display: flex;
+        align-items: flex-start;
+        span {
+          white-space: normal;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+      }
+      .head {
+        font-family: "source-sans-pro-bold";
+        font-size: 1.7rem;
+        padding: 1rem;
+        border: 1px solid #000;
+        text-align: start;
+      }
+    }
+    li,
+    p {
+      margin-bottom: 4rem !important;
+      .bold {
+        font-family: "source-sans-pro-bold";
+      }
+      font-size: 1.7rem;
+      font-family: "source-sans-pro-semi-bold";
+      color: #000;
+      list-style: circle;
+      a {
+        color: #da9915;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 3rem;
+    }
+  }
+  @media (min-width: 768px) {
+    background: #fff;
+    min-height: 44.7rem;
+    .card {
+      border-radius: 16px;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(215, 228, 229, 0.75);
+      box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #da9915;
+      padding: 6rem;
+      width: calc(100% - 2rem);
+      .img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20rem;
+        height: 20rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border-top-right-radius: 20px;
+        background: url("/assets/token2.jpeg") no-repeat center center;
+        background-size: cover;
+      }
+    }
+    .section-desc {
+      h2 {
+        font-size: 5rem;
+      }
+      .desc-img {
+        width: 100%;
+      }
+      .table {
+        width: 70%;
+        font-size: 1.7rem;
+      }
+      li,
+      p {
+        width: 100%;
+        font-size: 2.4rem;
+        line-height: 3rem;
+        margin-bottom: 6rem !important;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3rem;
+        line-height: 3rem;
+      }
+    }
+  }
+}

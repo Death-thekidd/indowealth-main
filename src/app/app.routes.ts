@@ -9,6 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogContentComponent } from './blog-content/blog-content.component';
 import { ContactComponent } from './contact/contact.component';
 import { NbcComponent } from './nbc/nbc.component';
+import { FaqComponent } from './faq/faq.component';
 
 export const routes: Routes = [
   { redirectTo: 'home', path: '', pathMatch: 'full' },
@@ -40,5 +41,10 @@ export const routes: Routes = [
     component: NbcComponent,
     path: 'nbc',
     data: { title: 'Nbc' },
+  },
+  {
+    component: FaqComponent,
+    path: 'faq',
+    data: { title: 'Faq' },
   },
 ];
