@@ -1,0 +1,100 @@
+.hero {
+  min-height: calc(50vh - 8.8rem);
+  width: 100%;
+  background: url("/assets/token_hero_mobile.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  h1 {
+    width: 25.7rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    margin-left: 7%;
+    white-space: nowrap;
+  }
+  @media (min-width: 768px) {
+    background: url("/assets/blog_hero.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: calc(50vh - 10rem);
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 8rem;
+    h1 {
+      font-size: 10rem;
+      width: 49.5rem;
+      margin-left: 0;
+    }
+  }
+}
+
+.second-sec {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Inter" !important;
+  }
+  p {
+    font-size: 1.6rem;
+    font-family: "source-sans-pro-semi-bold";
+    line-height: 1.5 !important;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #da9915;
+    width: 13rem;
+    height: 4.1rem;
+    border-radius: 5px;
+    font-family: "source-sans-pro-bold";
+    font-size: 1.6rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba(218, 153, 21, 0.6); /* Glow effect matching the button color */
+      transform: scale(1.05); /* Slightly expand the buton */
+    }
+  }
+  .bg-indo {
+    background-color: #da9915;
+    padding: 3rem 2rem;
+  }
+  @media (min-width: 768px) {
+    background: #fff;
+    height: auto;
+    padding: 5%;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      line-height: 1.5 !important;
+    }
+    .card {
+      max-height: 42rem;
+    }
+
+    .bg-indo {
+      background-color: #da9915;
+      padding: 4rem 2rem;
+    }
+  }
+}

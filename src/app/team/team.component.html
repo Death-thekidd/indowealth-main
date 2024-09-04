@@ -1,0 +1,25 @@
+<section class="hero">
+  <h1 #title>Meet the IndoWealth team</h1>
+</section>
+<section class="second-sec">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full gap-y-14">
+    <div
+      class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
+      *ngFor="let team of teams"
+    >
+      <div class="relative md:w-1/2">
+        <img
+          [src]="team.url"
+          alt="{{ team.name }}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col">
+        <h2 class="text-3xl font-bold text-white rounded">
+          {{ team.name }}
+        </h2>
+        <p class="text-base mb-6">{{ team?.body }}</p>
+      </div>
+    </div>
+  </div>
+</section>
