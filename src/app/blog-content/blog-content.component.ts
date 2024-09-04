@@ -7,9 +7,11 @@ import {
 } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   Inject,
+  OnInit,
   PLATFORM_ID,
   Renderer2,
   ViewChild,
@@ -55,9 +57,8 @@ import { ActivatedRoute } from '@angular/router';
     ]),
   ],
 })
-export class BlogContentComponent {
+export class BlogContentComponent implements OnInit, AfterViewInit {
   @ViewChild('title') title!: ElementRef;
-  @ViewChild('card') card!: ElementRef;
 
   blog: any;
   isLoading = true;
@@ -95,8 +96,6 @@ export class BlogContentComponent {
 
             if (target === this.title.nativeElement) {
               this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
-            } else if (target === this.card.nativeElement) {
-              this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
             }
           } else {
             // Element is out of view: hide it
@@ -106,7 +105,6 @@ export class BlogContentComponent {
       }, options);
 
       observer.observe(this.title.nativeElement);
-      observer.observe(this.card.nativeElement);
     }
   }
 

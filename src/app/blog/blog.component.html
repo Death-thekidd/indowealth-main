@@ -34,10 +34,12 @@
         <div
           class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
         >
-          <p class="text-base mb-6">{{ blog.body | slice : 0 : 150 }}...</p>
+          <p class="text-base mb-6">
+            {{ blog?.body[0]?.children[0]?.text | slice : 0 : 150 }}...
+          </p>
           <div class="flex justify-end">
             <a
-              [routerLink]="['/blogs', blog.slug]"
+              [routerLink]="['/blogs', blog.slug?.current]"
               class="px-4 py-2 rounded-lg"
             >
               Read More

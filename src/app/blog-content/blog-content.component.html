@@ -10,17 +10,17 @@
     <ng-container *ngIf="!isLoading">
       <img
         class="mobile-img"
-        [src]="blog?.mobileImage.asset.url"
+        [src]="blog?.mobileImage?.asset?.url"
         alt="{{ blog?.title }}"
       />
       <img
         class="desktop-img"
-        [src]="blog?.desktopImage"
+        [src]="blog?.desktopImage?.asset?.url"
         alt="{{ blog?.title }}"
       />
       <div #card class="card">
         <h2>{{ blog?.title }}</h2>
-        <p>{{ blog?.content }}</p>
+        <p>{{ blog?.body[0]?.children[0]?.text }}</p>
       </div>
     </ng-container>
   </div>

@@ -87,6 +87,7 @@ export class BlogComponent {
       .then((posts: any[]) => {
         this.blogs = posts;
         this.isLoading = false;
+        console.log(this.blogs);
       });
   }
 
