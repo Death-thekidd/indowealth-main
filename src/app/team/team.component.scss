@@ -1,7 +1,8 @@
 .hero {
   min-height: calc(50vh - 8.8rem);
   width: 100%;
-  background: url("/assets/team_hero_mobile.JPG") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/team_hero_mobile.JPG") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -21,7 +22,8 @@
     white-space: nowrap;
   }
   @media (min-width: 768px) {
-    background: url("/assets/team_hero.JPG") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/assets/team_hero.JPG") no-repeat center center;
     background-size: cover;
     min-height: calc(50vh - 10rem);
     align-items: flex-start;
