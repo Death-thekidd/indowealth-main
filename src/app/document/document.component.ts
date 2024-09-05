@@ -46,7 +46,7 @@ export class DocumentComponent {
     },
     {
       title:
-        'Memo between PT Synery Tharada and China Communications Construction Company',
+        'Memorandum between PT Synery Tharada and China Communications Construction Company',
       name: 'memo2',
     },
     {

@@ -57,7 +57,7 @@ export class TeamComponent {
     {
       name: 'Kyo',
       url: 'assets/team1.JPEG',
-      body: 'Kyo is the General Manager of the Indowealth Group. Having worked and travelled throughout much of his younger days, he unsuspectingly stumbled into the Indowealth Group and has ended up as Head Minion to Will, Benny and Peter. Not one to outwardly express his thoughts, Kyo is nonetheless brimming with excitement to see IWT become a household name in the crypto verse',
+      body: 'Kyo is the General Manager of the Indowealth Group. Having worked and travelled throughout much of his younger days, he unsuspectingly stumbled into the Indowealth Group and has ended up as Head Minion to Will, Benny and Peter. Not one to outwardly express his thoughts, Kyo is nonetheless brimming with excitement to see IWT become a household name in the crypto verse.',
     },
     {
       name: 'Joshua “Josh” Joseph',
