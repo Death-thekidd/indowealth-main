@@ -8,7 +8,15 @@
       *ngFor="let document of documents"
     >
       <span class="name"> {{ document.title }}</span>
-      <a href="" class="view">View Document</a>
+      <a
+        href="https://indowealth-node-backend.vercel.app/download/{{
+          document.name
+        }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="view"
+        >View Document</a
+      >
     </div>
   </div>
 </section>

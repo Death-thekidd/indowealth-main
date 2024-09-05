@@ -41,29 +41,29 @@ export class DocumentComponent {
   documents: any[] = [
     {
       title: 'Memorandum between Indowealth and PT Synergy Tharada',
-      url: 'assets/whitepaper.pdf',
+      name: 'memo1',
     },
     {
       title: 'Memo between PT ST and CCCC',
-      url: 'assets/whitepaper.pdf',
+      name: 'memo2',
     },
     {
       title: 'Letter of approval',
-      url: 'assets/whitepaper.pdf',
+      name: 'Letter',
     },
     {
       title: 'Ministry of transportation approval letter',
-      url: 'assets/whitepaper.pdf',
+      name: 'ministry',
     },
     {
       title: 'NBC Land presentation',
-      url: 'assets/whitepaper.pdf',
+      name: 'nbc1',
     },
-    { title: 'NBC Land blueprint and design' },
-    { title: 'Master schedule' },
-    { title: 'NBC Land concept design' },
-    { title: 'CCCC presentation' },
-    { title: 'WDS presentation' },
+    { title: 'NBC Land, blueprint and design', name: 'nbc2' },
+    { title: 'Master schedule', name: 'master' },
+    { title: 'NBC Land concept design', name: 'nbc3' },
+    { title: 'CCCC presentation', name: 'China' },
+    { title: 'WDS presentation', name: 'wds' },
   ];
 
   constructor(
