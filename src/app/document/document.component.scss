@@ -59,7 +59,7 @@
     color: #fff;
     .name {
       font-size: 1.6rem;
-      font-family: "source-sans-pro" !important;
+      font-family: "source-sans-pro-bold" !important;
       display: inline-block;
       width: 70%;
     }
@@ -91,6 +91,7 @@
     .card {
       padding: 2rem 4rem;
       .name {
+        font-family: "source-sans-pro-bold" !important;
         font-size: 2.4rem;
       }
       a {
