@@ -43,8 +43,7 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.isLoading = false;
-        }, 1000); // Add delay to simulate loading time
-        this.scrollToTop();
+        }, 1000);
       }
     });
   }
