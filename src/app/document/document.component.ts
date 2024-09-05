@@ -40,30 +40,38 @@ export class DocumentComponent {
   @ViewChild('title') title!: ElementRef;
   documents: any[] = [
     {
-      title: 'Memorandum between Indowealth and PT Synergy Tharada',
+      title:
+        'Memorandum between              PT Synergy Tharada and Indowealth Group',
       name: 'memo1',
     },
     {
-      title: 'Memo between PT ST and CCCC',
+      title:
+        'Memo between PT Synery Tharada and China Communications Construction Company',
       name: 'memo2',
     },
     {
-      title: 'Letter of approval',
+      title:
+        'Letter of Approval for NBC Land jointly issued by Ministry of Investments and Ministry of Marine Affairs & Fisheries',
       name: 'Letter',
     },
     {
-      title: 'Ministry of transportation approval letter',
+      title:
+        'Ministry of Transportation Approval Letter to PT Synergy Tharada for Land Survey Work',
       name: 'ministry',
     },
     {
-      title: 'NBC Land presentation',
+      title: 'NBC Land Project Presentation',
       name: 'nbc1',
     },
-    { title: 'NBC Land, blueprint and design', name: 'nbc2' },
-    { title: 'Master schedule', name: 'master' },
-    { title: 'NBC Land concept design', name: 'nbc3' },
-    { title: 'CCCC presentation', name: 'China' },
-    { title: 'WDS presentation', name: 'wds' },
+    { title: 'NBC Land Architectural Blueprint & Design', name: 'nbc2' },
+    { title: 'Master Schedule              NBC Land', name: 'master' },
+    { title: 'NBC Land Reclamatiion Concept Design', name: 'nbc3' },
+    {
+      title:
+        'China Communications Construction Company Limited (CCCC) Presentation',
+      name: 'China',
+    },
+    { title: 'WDS Architecture Firm Presentation', name: 'wds' },
   ];
 
   constructor(

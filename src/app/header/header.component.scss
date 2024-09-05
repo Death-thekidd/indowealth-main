@@ -31,6 +31,9 @@
 
       @media (min-width: 768px) {
         display: inline-block;
+        font-size: 1.5rem;
+      }
+      @media (min-width: 1200px) {
         font-size: 2rem;
       }
     }
@@ -69,6 +72,16 @@
 
   .desktop-controls {
     display: none;
+
+    @media (min-width: 1200px) {
+      .nav-list {
+        li {
+          a {
+            font-size: 1.5rem !important;
+          }
+        }
+      }
+    }
 
     @media (min-width: 768px) {
       display: flex;
@@ -121,7 +134,7 @@
             padding: 0.5rem 0.5rem;
             cursor: pointer;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #fff;
             font-family: "source-sans-pro-bold";
 
@@ -130,7 +143,7 @@
               height: 6rem;
               display: flex;
               align-items: center;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
               color: #fff;
               font-family: "source-sans-pro-bold";
 
@@ -187,7 +200,7 @@
                 display: flex;
                 align-items: center;
                 padding: 0.5rem 2rem;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 color: #fff;
                 transition: all 0.3s ease;
                 &:hover {

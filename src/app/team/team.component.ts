@@ -47,7 +47,7 @@ export class TeamComponent {
     {
       name: 'Scott “Benny” Burnham',
       url: 'assets/team3.JPEG',
-      body: 'Scott Burnham is the CFO of the Indowealth Group. He has previous work experience in audit and finance, where he crossed paths with Will and found himself on a one-way trip into Indowealth Group. Despite his cautious and wary nature, he was convinced of the merits in creating a token that would allow for equal opportunity investments for investors of all categories into large-scale projects, and is now determined to ensure the success of IWT',
+      body: 'Scott Burnham is the CFO of the Indowealth Group. He has previous work experience in audit and finance, where he crossed paths with Will and found himself on a one-way trip into Indowealth Group. Despite his cautious and wary nature, he was convinced of the merits in creating a token that would allow for equal opportunity investments for investors of all categories into large-scale projects, and is now determined to ensure the success of IWT.',
     },
     {
       name: 'Sergei “Peter” Pavlovitch',
@@ -57,7 +57,7 @@ export class TeamComponent {
     {
       name: 'Kyo',
       url: 'assets/team1.JPEG',
-      body: 'Kyo is the General Manager of the Indowealth Group. Having worked and travelled throughout much of his younger days, he unsuspectingly stumbled into the Indowealth Group and has ended up as Head Minion to Will, Benny and Peter. His seemingly grudging acceptance of this role in the Indowealth Group belies his passion and excitement to make IWT a household name in the cryptoverse, though he is loath to outwardly display such excitement to others.',
+      body: 'Kyo is the General Manager of the Indowealth Group. Having worked and travelled throughout much of his younger days, he unsuspectingly stumbled into the Indowealth Group and has ended up as Head Minion to Will, Benny and Peter. Not one to outwardly express his thoughts, Kyo is nonetheless brimming with excitement to see IWT become a household name in the crypto verse',
     },
     {
       name: 'Joshua “Josh” Joseph',

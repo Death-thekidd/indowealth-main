@@ -4,6 +4,7 @@
   justify-content: space-evenly;
   gap: 3rem;
   @media (min-width: 768px) {
+    padding-top: 10%;
     justify-content: space-evenly;
     width: 100%;
     flex-direction: row;
@@ -12,9 +13,6 @@
   .footer-item {
     display: flex;
     flex-direction: column;
-    @media (min-width: 768px) {
-      padding-top: 20rem;
-    }
     .item-header {
       color: #da9915;
       font-size: 2rem;
