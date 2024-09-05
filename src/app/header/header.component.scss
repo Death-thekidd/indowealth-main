@@ -87,14 +87,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: calc(100% - 10rem);
+      width: calc(100% - 2rem);
       background: rgba(209, 6, 0, 0.36);
       border-radius: 2rem;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid #da9915;
-      margin-left: 3.5rem;
       padding: 0 3rem;
       height: 7rem;
 
