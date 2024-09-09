@@ -15,6 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faq',
@@ -42,8 +43,13 @@ export class FaqComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('FAQ - Indowealth Group');
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {

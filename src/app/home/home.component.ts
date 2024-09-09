@@ -17,6 +17,7 @@ import {
 } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SanityService } from '../sanity.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -67,7 +68,8 @@ export class HomeComponent implements AfterViewInit {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
 
   ngAfterViewInit() {
@@ -142,5 +144,6 @@ export class HomeComponent implements AfterViewInit {
     //   this.homeData = data;
     //   console.log(data);
     // });
+    this.titleService.setTitle('Indowealth Group');
   }
 }

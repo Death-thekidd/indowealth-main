@@ -17,6 +17,7 @@ import {
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-team',
@@ -70,8 +71,13 @@ export class TeamComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Our Team - Indowealth Group');
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {

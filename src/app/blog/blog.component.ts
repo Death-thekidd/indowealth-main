@@ -18,6 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
 import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -74,11 +75,13 @@ export class BlogComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
     this.getBlogs(this.page);
+    this.titleService.setTitle('Blogs - Indowealth Group');
   }
 
   getBlogs(page: number) {

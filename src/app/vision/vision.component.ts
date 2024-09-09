@@ -16,6 +16,7 @@ import {
 } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { SanityService } from '../sanity.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-vision',
@@ -63,7 +64,8 @@ export class VisionComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
 
   ngAfterViewInit() {
@@ -124,5 +126,6 @@ export class VisionComponent {
     // this.sanityService.getVisionData().subscribe((data) => {
     //   this.visionData = data;
     // });
+    this.titleService.setTitle('Vision - Indowealth Group');
   }
 }

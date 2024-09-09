@@ -15,6 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trading',
@@ -44,7 +45,8 @@ export class TradingComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
 
   ngAfterViewInit() {
@@ -104,5 +106,6 @@ export class TradingComponent {
     //   this.tradingData = data;
     //   console.log(data);
     // });
+    this.titleService.setTitle('IWT - Indowealth Group');
   }
 }

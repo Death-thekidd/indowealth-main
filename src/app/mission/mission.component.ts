@@ -15,6 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-mission',
@@ -62,7 +63,8 @@ export class MissionComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
-    private sanityService: SanityService
+    private sanityService: SanityService,
+    private titleService: Title
   ) {}
 
   ngAfterViewInit() {
@@ -125,5 +127,6 @@ export class MissionComponent {
     //   this.missionData = data;
     //   console.log(data);
     // });
+    this.titleService.setTitle('Mission - Indowealth Group');
   }
 }
