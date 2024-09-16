@@ -18,6 +18,7 @@
       <div
         class="flex flex-col md:flex-row bg-white dark:bg-card rounded-lg shadow-lg overflow-hidden w-full card"
         *ngFor="let blog of blogs"
+        [@fadeInSlideUp]="'in'"
       >
         <div class="relative md:w-1/2">
           <img
@@ -38,8 +39,8 @@
         <div
           class="md:w-1/2 px-6 py-8 bg-indo text-white flex flex-col justify-between"
         >
-          <p class="text-base mb-6">
-            {{ blog?.body[0]?.children[0]?.text | slice : 0 : 150 }}...
+          <p class="text-base mb-6" [innerHTML]="blog.bodyPreview">
+            <!-- Display formatted blog body preview -->
           </p>
           <div class="flex justify-end">
             <a

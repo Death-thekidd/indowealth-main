@@ -19,6 +19,7 @@ import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
 import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
 import { Title } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -30,7 +31,7 @@ import { Title } from '@angular/platform-browser';
     SkeletonPreviewComponent,
   ],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss',
+  styleUrls: ['./blog.component.scss'],
   animations: [
     trigger('fadeInSlideUp', [
       transition(':enter', [
@@ -41,29 +42,10 @@ import { Title } from '@angular/platform-browser';
         ),
       ]),
     ]),
-    trigger('fadeInSlideRight', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(-30px)' }),
-        animate(
-          '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
-        ),
-      ]),
-    ]),
-    trigger('fadeInSlideLeft', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(30px)' }),
-        animate(
-          '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
-        ),
-      ]),
-    ]),
   ],
 })
 export class BlogComponent {
   @ViewChild('title') title!: ElementRef;
-  @ViewChild('card') card!: ElementRef;
 
   blogs: any[] = [];
   page: number = 1;
@@ -75,6 +57,7 @@ export class BlogComponent {
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
+    private sanitizer: DomSanitizer,
     private sanityService: SanityService,
     private titleService: Title
   ) {}
@@ -88,68 +71,51 @@ export class BlogComponent {
     this.sanityService
       .fetchPosts(page, this.blogsPerPage)
       .then((posts: any[]) => {
-        this.blogs = posts;
+        this.blogs = posts.map((blog) => ({
+          ...blog,
+          bodyPreview: this.formatBlogBody(blog.body), // Format the body here
+        }));
         this.isLoading = false;
         console.log(this.blogs);
       });
   }
 
+  formatBlogBody(body: any, maxLength: number = 150): SafeHtml {
+    if (!body || !body[0]?.children) return '';
+
+    let formattedText = '';
+
+    body[0].children.forEach((child: any) => {
+      let childText = child.text || '';
+
+      // Convert URLs to clickable links
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      childText = childText.replace(
+        urlRegex,
+        '<a href="$&" target="_blank">$&</a>'
+      );
+
+      // Handle strong marks
+      if (child.marks && child.marks.includes('strong')) {
+        childText = `<strong>${childText}</strong>`;
+      }
+
+      formattedText += childText; // Append child text
+    });
+
+    // Replace newlines with <br />
+    formattedText = formattedText.replace(/\n/g, '<br />');
+
+    // Cut to maxLength and add ellipsis if needed
+    if (formattedText.length > maxLength) {
+      formattedText = formattedText.substring(0, maxLength) + '...';
+    }
+
+    return this.sanitizer.bypassSecurityTrustHtml(formattedText);
+  }
+
   onPageChange(newPage: number) {
     this.page = newPage;
     this.getBlogs(this.page);
-  }
-
-  ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const target = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            // Set visibility to visible before running the animation
-            this.renderer.setStyle(target, 'visibility', 'visible');
-
-            if (target === this.title.nativeElement) {
-              this.runAnimation(this.title.nativeElement, 'fadeInSlideUp');
-            } else if (target === this.card.nativeElement) {
-              this.runAnimation(this.card.nativeElement, 'fadeInSlideUp');
-            }
-          } else {
-            // Element is out of view: hide it
-            this.renderer.setStyle(target, 'visibility', 'hidden');
-          }
-        });
-      }, options);
-
-      observer.observe(this.title.nativeElement);
-      // observer.observe(this.card.nativeElement);
-    }
-  }
-
-  private runAnimation(element: any, animationName: string) {
-    const animation = this.animationBuilder.build([
-      style({ opacity: 0, transform: this.getTransform(animationName) }),
-      animate(
-        '800ms ease-out',
-        style({ opacity: 1, transform: 'translate(0, 0)' })
-      ),
-    ]);
-
-    const player = animation.create(element);
-    player.play();
-  }
-
-  private getTransform(animationName: string): string {
-    switch (animationName) {
-      case 'fadeInSlideUp':
-        return 'translateY(30px)';
-      default:
-        return 'none';
-    }
   }
 }

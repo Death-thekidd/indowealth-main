@@ -20,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -62,21 +63,57 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
 
   blog: any;
   isLoading = true;
+  sanitizedText!: SafeHtml;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
     this.sanityService.getPostBySlug(slug as string).subscribe((data) => {
       this.blog = data;
+      this.sanitizeBlogText();
       this.isLoading = false;
     });
+  }
+
+  sanitizeBlogText() {
+    const bodyContent = this.blog?.body || [];
+    let formattedText = '';
+
+    bodyContent.forEach((block: any) => {
+      if (block.children) {
+        block.children.forEach((child: any) => {
+          // Handle links
+          let childText = child.text;
+
+          // Convert URLs to clickable links
+          const urlRegex = /(https?:\/\/[^\s]+)/g;
+          childText = childText.replace(
+            urlRegex,
+            '<a href="$&" target="_blank">$&</a>'
+          );
+
+          // Check for strong mark
+          if (child.marks && child.marks.includes('strong')) {
+            childText = `<strong>${childText}</strong>`;
+          }
+
+          formattedText += childText; // Append child text
+        });
+      }
+    });
+
+    // Replace all newline characters with <br />
+    formattedText = formattedText.replace(/\n/g, '<br />');
+
+    this.sanitizedText = this.sanitizer.bypassSecurityTrustHtml(formattedText);
   }
 
   ngAfterViewInit() {
