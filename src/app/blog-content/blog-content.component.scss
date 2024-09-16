@@ -77,9 +77,13 @@
     border: 1px solid #da9915;
     height: auto;
     padding: 4rem 3rem 3rem 3rem;
-    width: calc(100% - 3rem);
+    width: calc(100% - 2rem);
     img {
       height: 20rem;
+    }
+
+    p {
+      word-wrap: break-word;
     }
   }
   h2 {
@@ -93,6 +97,7 @@
     font-size: 1.2rem;
     color: #000;
     margin-top: 1rem;
+    max-width: 35rem;
   }
   @media (min-width: 768px) {
     background: #fff;
@@ -103,7 +108,7 @@
     }
     p {
       font-size: 2.4rem;
-      width: auto;
+      max-width: 100%;
       padding: 1rem 0rem;
     }
     .section-desc {
@@ -115,7 +120,7 @@
       width: calc(100% - 15rem);
       z-index: 900;
       border-radius: 20px;
-      transform: translateY(15%);
+      transform: translateY(10%);
     }
     .mobile-img {
       display: none;

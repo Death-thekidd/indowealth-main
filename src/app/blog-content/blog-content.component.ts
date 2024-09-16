@@ -102,7 +102,7 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
 
           // Check for strong mark
           if (child.marks && child.marks.includes('strong')) {
-            childText = `<strong>${childText}</strong>`;
+            childText = `<strong class="bold">${childText}</strong>`;
           }
 
           formattedText += childText; // Append child text
