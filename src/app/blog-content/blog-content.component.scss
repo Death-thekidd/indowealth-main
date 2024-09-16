@@ -94,6 +94,15 @@
     text-align: start;
     align-self: flex-start;
   }
+
+  a {
+    color: #da9915;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   p {
     font-size: 1.2rem;
     color: #000;

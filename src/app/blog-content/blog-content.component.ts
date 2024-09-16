@@ -97,7 +97,7 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
           const urlRegex = /(https?:\/\/[^\s]+)/g;
           childText = childText.replace(
             urlRegex,
-            '<a href="$&" target="_blank">$&</a>'
+            '<a style="color: #da9915" href="$&" target="_blank">$&</a>'
           );
 
           // Check for strong mark
