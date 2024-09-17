@@ -18,7 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
 import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -59,12 +59,21 @@ export class BlogComponent {
     private animationBuilder: AnimationBuilder,
     private sanitizer: DomSanitizer,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.getBlogs(this.page);
     this.titleService.setTitle('Blogs - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Read the latest news and updates from Indowealth Group on our blog.',
+      },
+      { name: 'keywords', content: 'blog, news, updates, Indowealth Group' },
+    ]);
   }
 
   getBlogs(page: number) {

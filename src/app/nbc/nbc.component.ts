@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nbc',
@@ -44,11 +44,23 @@ export class NbcComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('NBC - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Discover NBC Land, a premier real estate investment opportunity with Indowealth Group.',
+      },
+      {
+        name: 'keywords',
+        content: 'NBC Land, real estate, investment, Indowealth Group',
+      },
+    ]);
   }
 
   ngAfterViewInit() {

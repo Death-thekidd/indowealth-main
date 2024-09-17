@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trading',
@@ -46,7 +46,8 @@ export class TradingComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngAfterViewInit() {
@@ -106,6 +107,18 @@ export class TradingComponent {
     //   this.tradingData = data;
     //   console.log(data);
     // });
-    this.titleService.setTitle('IWT - Indowealth Group');
+    this.titleService.setTitle('Indowealth Token (IWT) - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Learn about Indowealth Token (IWT) and its role in our ecosystem.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Indowealth Token, IWT, cryptocurrency, blockchain, Indowealth Group',
+      },
+    ]);
   }
 }

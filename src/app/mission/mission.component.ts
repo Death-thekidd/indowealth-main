@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-mission',
@@ -64,7 +64,8 @@ export class MissionComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngAfterViewInit() {
@@ -128,5 +129,16 @@ export class MissionComponent {
     //   console.log(data);
     // });
     this.titleService.setTitle('Mission - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Discover the mission of Indowealth Group and our commitment to excellence.',
+      },
+      {
+        name: 'keywords',
+        content: 'mission, Indowealth Group, commitment, excellence',
+      },
+    ]);
   }
 }

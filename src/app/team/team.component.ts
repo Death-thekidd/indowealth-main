@@ -17,7 +17,7 @@ import {
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-team',
@@ -72,11 +72,23 @@ export class TeamComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Our Team - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Meet the dedicated team behind Indowealth Group and our expertise in the industry.',
+      },
+      {
+        name: 'keywords',
+        content: 'team, Indowealth Group, experts, leadership',
+      },
+    ]);
   }
 
   ngAfterViewInit() {

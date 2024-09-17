@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faq',
@@ -44,11 +44,20 @@ export class FaqComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('FAQ - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Find answers to frequently asked questions about Indowealth Group.',
+      },
+      { name: 'keywords', content: 'FAQ, frequently asked questions, support' },
+    ]);
   }
 
   ngAfterViewInit() {

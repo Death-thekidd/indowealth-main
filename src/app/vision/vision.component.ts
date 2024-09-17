@@ -16,7 +16,7 @@ import {
 } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-vision',
@@ -65,7 +65,8 @@ export class VisionComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngAfterViewInit() {
@@ -127,5 +128,16 @@ export class VisionComponent {
     //   this.visionData = data;
     // });
     this.titleService.setTitle('Vision - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Explore the vision of Indowealth Group and our goals for the future.',
+      },
+      {
+        name: 'keywords',
+        content: 'vision, Indowealth Group, future goals, aspirations',
+      },
+    ]);
   }
 }

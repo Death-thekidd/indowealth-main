@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -64,7 +64,8 @@ export class AboutComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngAfterViewInit() {
@@ -127,5 +128,16 @@ export class AboutComponent {
     //   console.log(data);
     // });
     this.titleService.setTitle('About Us - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Learn more about Indowealth Group, our history, values, and what drives us.',
+      },
+      {
+        name: 'keywords',
+        content: 'about, Indowealth Group, company history, values',
+      },
+    ]);
   }
 }

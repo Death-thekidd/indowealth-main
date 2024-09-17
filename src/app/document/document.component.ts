@@ -17,7 +17,7 @@ import {
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SanityService } from '../sanity.service';
 import { RouterModule } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-document',
@@ -80,11 +80,20 @@ export class DocumentComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Blogs - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Access comprehensive documentation and user guides for Indowealth Group services.',
+      },
+      { name: 'keywords', content: 'documentation, user guides, resources' },
+    ]);
   }
 
   ngAfterViewInit() {

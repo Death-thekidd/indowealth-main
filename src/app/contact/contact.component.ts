@@ -15,7 +15,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SanityService } from '../sanity.service';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -44,11 +44,23 @@ export class ContactComponent {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Contact Us - Indowealth Group');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Get in touch with Indowealth Group for inquiries and support.',
+      },
+      {
+        name: 'keywords',
+        content: 'contact, support, inquiries, Indowealth Group',
+      },
+    ]);
   }
 
   ngAfterViewInit() {
