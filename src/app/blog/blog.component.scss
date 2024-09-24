@@ -46,7 +46,7 @@
   align-items: center;
   padding: 2rem 1rem;
   h2 {
-    font-size: 5rem;
+    font-size: 2.4rem;
     margin-bottom: 1.5rem;
   }
   p {
@@ -63,7 +63,9 @@
     border-radius: 5px;
     font-family: "source-sans-pro-bold";
     font-size: 1.6rem;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
     cursor: pointer;
 
     &:hover {
@@ -79,6 +81,11 @@
     background: #fff;
     height: auto;
     padding: 5%;
+
+    h2 {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+    }
 
     .bg-indo {
       background-color: #d10600;
