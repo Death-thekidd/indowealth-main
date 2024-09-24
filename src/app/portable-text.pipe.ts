@@ -8,6 +8,7 @@ import {
 import { PortableTextBlock } from '@portabletext/types';
 import htm from 'htm';
 import vhtml from 'vhtml';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 const html = htm.bind(vhtml);
 
@@ -16,7 +17,10 @@ const html = htm.bind(vhtml);
   standalone: true,
 })
 export class PortableTextPipe implements PipeTransform {
-  constructor(private sanityImagePipe: SanityImagePipe) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private sanityImagePipe: SanityImagePipe,
+  ) {}
 
   components: PortableTextComponents = {
     types: {
@@ -25,8 +29,6 @@ export class PortableTextPipe implements PipeTransform {
     },
     marks: {
       link: ({ children, value }) => {
-        // ⚠️ `value.href` IS NOT "SAFE" BY DEFAULT ⚠️
-        // ⚠️ Make sure you sanitize/validate the href! ⚠️
         const href = value.href || '';
 
         if (uriLooksSafe(href)) {
@@ -34,12 +36,13 @@ export class PortableTextPipe implements PipeTransform {
           return `<a style="color: #da9915" href="${href}" target="_blank" rel="${rel}">${children}</a>`;
         }
 
-        // If the URI appears unsafe, render the children (eg, text) without the link
         return children;
       },
     },
   };
-  transform(value: PortableTextBlock[]): string {
-    return toHTML(value, { components: this.components });
+
+  transform(value: PortableTextBlock[]): SafeHtml {
+    const htmlString = toHTML(value, { components: this.components });
+    return this.sanitizer.bypassSecurityTrustHtml(htmlString);
   }
 }
