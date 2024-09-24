@@ -4012,6 +4012,11 @@
   resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
   integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
+"@types/vhtml@^2.2.9":
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@types/vhtml/-/vhtml-2.2.9.tgz#f9874533f1576e86350b9863652b5228b50ac41f"
+  integrity sha512-maEIRJb+PdK2FWDORl0a0aNUSGlniMl8pN+7WbanLzx1Gry4gLfsT0C9O/6JucPPBHCNrqDSImr2QcsUENLKUg==
+
 "@types/wrap-ansi@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/wrap-ansi/-/wrap-ansi-3.0.0.tgz#18b97a972f94f60a679fd5c796d96421b9abb9fd"
@@ -7247,6 +7252,11 @@ hpack.js@^2.1.6:
     obuf "^1.0.0"
     readable-stream "^2.0.1"
     wbuf "^1.1.0"
+
+htm@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/htm/-/htm-3.1.1.tgz#49266582be0dc66ed2235d5ea892307cc0c24b78"
+  integrity sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==
 
 html-encoding-sniffer@^3.0.0:
   version "3.0.0"
@@ -12385,6 +12395,11 @@ vary@^1, vary@^1.1.2, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+
+vhtml@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vhtml/-/vhtml-2.2.0.tgz#369e6823ed6c32cbb9f6e33395bae7c65faa014c"
+  integrity sha512-TPXrXrxBOslRUVnlVkiAqhoXneiertIg86bdvzionrUYhEuiROvyPZNiiP6GIIJ2Q7oPNVyEtIx8gMAZZE9lCQ==
 
 vite@5.4.0:
   version "5.4.0"
