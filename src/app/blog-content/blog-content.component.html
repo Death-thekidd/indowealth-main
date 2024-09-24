@@ -20,7 +20,7 @@
       />
       <div #card class="card">
         <h2>{{ blog?.title }}</h2>
-        <p [innerHTML]="sanitizedText"></p>
+        <p [innerHTML]="blog?.body | portableText"></p>
       </div>
     </ng-container>
   </div>

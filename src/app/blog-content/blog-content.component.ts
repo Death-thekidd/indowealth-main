@@ -21,11 +21,19 @@ import { SanityService } from '../sanity.service';
 import { SkeletonPreviewComponent } from '../skeleton-preview/skeleton-preview.component';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { PortableTextPipe } from '../portable-text.pipe';
+import { SanityImagePipe } from '../sanity-image.pipe';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgxPaginationModule, CommonModule, SkeletonPreviewComponent],
+  imports: [
+    NgxPaginationModule,
+    CommonModule,
+    SkeletonPreviewComponent,
+    PortableTextPipe,
+    SanityImagePipe,
+  ],
   templateUrl: './blog-content.component.html',
   styleUrl: './blog-content.component.scss',
   animations: [
@@ -34,7 +42,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateY(60px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateY(0)' })
+          style({ opacity: 1, transform: 'translateY(0)' }),
         ),
       ]),
     ]),
@@ -43,7 +51,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateX(-30px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
+          style({ opacity: 1, transform: 'translateX(0)' }),
         ),
       ]),
     ]),
@@ -52,7 +60,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateX(30px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
+          style({ opacity: 1, transform: 'translateX(0)' }),
         ),
       ]),
     ]),
@@ -71,7 +79,7 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
   ) {}
 
   ngOnInit(): void {
@@ -97,7 +105,7 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
           const urlRegex = /(https?:\/\/[^\s]+)/g;
           childText = childText.replace(
             urlRegex,
-            '<a style="color: #da9915" href="$&" target="_blank">$&</a>'
+            '<a style="color: #da9915" href="$&" target="_blank">$&</a>',
           );
 
           // Check for strong mark
@@ -150,7 +158,7 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
       style({ opacity: 0, transform: this.getTransform(animationName) }),
       animate(
         '800ms ease-out',
-        style({ opacity: 1, transform: 'translate(0, 0)' })
+        style({ opacity: 1, transform: 'translate(0, 0)' }),
       ),
     ]);
 
