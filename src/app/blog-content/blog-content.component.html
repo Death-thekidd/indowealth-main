@@ -19,7 +19,12 @@
         alt="{{ blog?.title }}"
       />
       <div #card class="card">
+        <p class="text-start self-end">
+          <i class="pi pi-user" style="font-size: 2.5rem; color: #da9915"></i>
+          <i class="ml-4">{{ blog?.authorName }}</i>
+        </p>
         <h2>{{ blog?.title }}</h2>
+
         <p [innerHTML]="blog?.body | portableText"></p>
       </div>
     </ng-container>
