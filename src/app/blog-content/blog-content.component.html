@@ -1,3 +1,26 @@
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <p-header>
+    <div class="flex items-center">
+      <!-- Tailwind class for the author image to be round and larger -->
+      <img
+        class="w-16 h-16 rounded-full mr-4"
+        [src]="blog?.author?.image?.asset?._ref | sanityImage"
+        alt=""
+      />
+      <h4 class="text-xl font-semibold">{{ blog?.author?.name }}</h4>
+    </div>
+  </p-header>
+  <p class="!text-lg text-gray-700">
+    {{ blog?.author?.bio[0].children[0].text }}
+  </p>
+</p-dialog>
+
 <section class="hero">
   <h1 #title>Blog & Announcements</h1>
 </section>
@@ -19,12 +42,17 @@
         alt="{{ blog?.title }}"
       />
       <div #card class="card">
-        <p *ngIf="blog?.authorName" class="text-start self-end">
-          <i
-            class="pi pi-user-edit"
-            style="font-size: 2.5rem; color: #da9915"
-          ></i>
-          <i class="ml-4">{{ blog?.authorName }}</i>
+        <p
+          *ngIf="blog?.author?.name"
+          class="flex items-center cursor-pointer text-start self-end mb-4"
+          (click)="showDialog()"
+        >
+          <img
+            class="w-16 h-16 rounded-full mr-4"
+            [src]="blog?.author?.image?.asset?._ref | sanityImage"
+            alt=""
+          />
+          <i class="ml-4">{{ blog?.author.name }}</i>
         </p>
         <h2>{{ blog?.title }}</h2>
 

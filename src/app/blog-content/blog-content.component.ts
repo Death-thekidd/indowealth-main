@@ -23,6 +23,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { PortableTextPipe } from '../portable-text.pipe';
 import { SanityImagePipe } from '../sanity-image.pipe';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-blog',
@@ -33,6 +34,7 @@ import { SanityImagePipe } from '../sanity-image.pipe';
     SkeletonPreviewComponent,
     PortableTextPipe,
     SanityImagePipe,
+    DialogModule,
   ],
   templateUrl: './blog-content.component.html',
   styleUrl: './blog-content.component.scss',
@@ -173,5 +175,11 @@ export class BlogContentComponent implements OnInit, AfterViewInit {
       default:
         return 'none';
     }
+  }
+
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
   }
 }

@@ -1,5 +1,5 @@
 a {
-  color: #da9915!important;
+  color: #da9915 !important;
 }
 .hero {
   min-height: calc(50vh - 8.8rem);
@@ -81,14 +81,14 @@ a {
     height: auto;
     padding: 4rem 3rem 3rem 3rem;
     width: calc(100% - 2rem);
-    img {
-      height: 20rem;
+
+    i {
+      display: block ruby;
     }
 
     p {
       word-wrap: break-word;
       -webkit-font-smoothing: antialiased;
-      
     }
   }
   h2 {

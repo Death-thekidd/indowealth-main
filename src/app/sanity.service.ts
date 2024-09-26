@@ -54,7 +54,11 @@ export class SanityService {
         }
       },
       body,
-      "authorName": author->name,
+      author-> {
+        name,
+        image,
+        bio
+      },
       publishedAt
     }[${start}...${end}]`;
 
@@ -80,7 +84,11 @@ export class SanityService {
         }
       },
       body,
-      "authorName": author->name,
+      author-> {
+        name,
+        image,
+        bio
+      },
       publishedAt
     }`;
 

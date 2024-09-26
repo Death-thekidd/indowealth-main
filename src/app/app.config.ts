@@ -5,6 +5,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { SanityImagePipe } from './sanity-image.pipe';
 import { PortableTextPipe } from './portable-text.pipe';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,5 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     SanityImagePipe,
     PortableTextPipe,
+    provideAnimationsAsync(),
   ],
 };

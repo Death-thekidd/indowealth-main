@@ -2903,6 +2903,18 @@
   resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.13.tgz#7a4bf6dac30713fbe1b4bc01dc572af0af72955d"
   integrity sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==
 
+"@primeuix/styled@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-0.0.6.tgz#281cbc5fb4f7e2a870fdd6056019b77243294858"
+  integrity sha512-bOya+/7WzCeF8D4N0BgGNk3Xe4F4PLEGu7V+btRlUOoEbda2uhp4nqqj2fOdzSERmjEUkkYds8dIVgVM56w1NA==
+  dependencies:
+    "@primeuix/utils" "^0.0.6"
+
+"@primeuix/utils@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.0.6.tgz#753035cc7d0c6d1ea3f92c87d576369f7fc20bc4"
+  integrity sha512-7RQ2/LkZpSbi08NAlfZfajqBtWFM2csimf+xk97EoQDhpouzzbHFwf6WFbAyniZC9aPGJ+m+2qgyLxvYzA0x3g==
+
 "@rexxars/react-json-inspector@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@rexxars/react-json-inspector/-/react-json-inspector-8.0.1.tgz#cd903eaf7bec40d4e870e1085619af5067196c59"
@@ -10208,6 +10220,14 @@ primeicons@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-7.0.0.tgz#6b25c3fdcb29bb745a3035bdc1ed5902f4a419cf"
   integrity sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==
+
+primeng@^18.0.0:
+  version "18.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-18.0.0-beta.2.tgz#c8c6dce65ec4c6bae85ee6a3170f3ce6ba80c2c1"
+  integrity sha512-zCC36qtQsruPObuB/awdxHX0KvuRXa0Ebew0jTGNwal8YpJenF6ytxB4UIn6BetnuCYDuRAXW5zklxveIgxXiw==
+  dependencies:
+    "@primeuix/styled" "0.0.6"
+    tslib "^2.3.0"
 
 prismjs@~1.27.0:
   version "1.27.0"

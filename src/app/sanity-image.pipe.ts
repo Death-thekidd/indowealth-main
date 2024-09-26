@@ -9,14 +9,18 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 export class SanityImagePipe implements PipeTransform {
   constructor(private sanityService: SanityService) {}
 
-  transform(value: SanityImageSource, width?: number): string {
-    if (width) {
-      return this.sanityService
-        .getImageUrlBuilder(value)
-        .width(width)
-        .auto('format')
-        .url();
+  transform(value: SanityImageSource, width?: number): string | null {
+    // Check if the value is null or undefined
+    if (!value) {
+      console.warn('SanityImagePipe: No image source provided');
+      return null; // Return null or a placeholder image URL
     }
-    return this.sanityService.getImageUrlBuilder(value).auto('format').url();
+
+    // Generate the image URL
+    const builder = this.sanityService.getImageUrlBuilder(value);
+    if (width) {
+      return builder.width(width).auto('format').url();
+    }
+    return builder.auto('format').url();
   }
 }
