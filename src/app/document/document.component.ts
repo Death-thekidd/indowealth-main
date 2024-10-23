@@ -31,7 +31,7 @@ import { Meta, Title } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateY(60px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateY(0)' })
+          style({ opacity: 1, transform: 'translateY(0)' }),
         ),
       ]),
     ]),
@@ -73,6 +73,11 @@ export class DocumentComponent {
       name: 'China',
     },
     { title: 'WDS Architecture Firm Presentation', name: 'wds' },
+    {
+      title:
+        'Classification of New Batam Center as Project of National Stategic Value by Indonesian Ministry of Investments',
+      name: 'Classification',
+    },
   ];
 
   constructor(
@@ -81,7 +86,7 @@ export class DocumentComponent {
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
     private titleService: Title,
-    private meta: Meta
+    private meta: Meta,
   ) {}
 
   ngOnInit(): void {
@@ -130,7 +135,7 @@ export class DocumentComponent {
       style({ opacity: 0, transform: this.getTransform(animationName) }),
       animate(
         '800ms ease-out',
-        style({ opacity: 1, transform: 'translate(0, 0)' })
+        style({ opacity: 1, transform: 'translate(0, 0)' }),
       ),
     ]);
 
