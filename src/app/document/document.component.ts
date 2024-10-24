@@ -52,6 +52,11 @@ export class DocumentComponent {
     },
     {
       title:
+        'Classification of New Batam Center as Project of National Stategic Value by Indonesian Ministry of Investments',
+      name: 'Classification',
+    },
+    {
+      title:
         'Letter of Approval for NBC Land jointly issued by Ministry of Investments and Ministry of Marine Affairs & Fisheries',
       name: 'Letter',
     },
@@ -73,11 +78,6 @@ export class DocumentComponent {
       name: 'China',
     },
     { title: 'WDS Architecture Firm Presentation', name: 'wds' },
-    {
-      title:
-        'Classification of New Batam Center as Project of National Stategic Value by Indonesian Ministry of Investments',
-      name: 'Classification',
-    },
   ];
 
   constructor(
