@@ -60,7 +60,7 @@ export class SanityService {
         bio
       },
       publishedAt
-    }[${start}...${end}]`;
+    }[]`;
 
     return this.sanityClient.fetch(query).finally(() => this.setLoading(false));
   }
