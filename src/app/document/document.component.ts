@@ -57,6 +57,11 @@ export class DocumentComponent {
     },
     {
       title:
+        'Official Recognition Letter of NBC Land as Project of National Strategic Value by Indonesian Ministry of Investments',
+      name: 'Official',
+    },
+    {
+      title:
         'Letter of Approval for NBC Land jointly issued by Ministry of Investments and Ministry of Marine Affairs & Fisheries',
       name: 'Letter',
     },
