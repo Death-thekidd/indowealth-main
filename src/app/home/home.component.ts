@@ -31,7 +31,7 @@ import { Title } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateY(50px)' }),
         animate(
           '900ms ease-out',
-          style({ opacity: 1, transform: 'translateY(0)' })
+          style({ opacity: 1, transform: 'translateY(0)' }),
         ),
       ]),
     ]),
@@ -40,7 +40,7 @@ import { Title } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateX(-30px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
+          style({ opacity: 1, transform: 'translateX(0)' }),
         ),
       ]),
     ]),
@@ -49,7 +49,7 @@ import { Title } from '@angular/platform-browser';
         style({ opacity: 0, transform: 'translateX(30px)' }),
         animate(
           '800ms ease-out',
-          style({ opacity: 1, transform: 'translateX(0)' })
+          style({ opacity: 1, transform: 'translateX(0)' }),
         ),
       ]),
     ]),
@@ -57,7 +57,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('title') title!: ElementRef;
-  @ViewChild('button') button!: ElementRef;
+  @ViewChild('btn') button!: ElementRef;
   @ViewChild('img') img!: ElementRef;
   @ViewChild('desc') desc!: ElementRef;
   @ViewChild('card') card!: ElementRef;
@@ -69,7 +69,7 @@ export class HomeComponent implements AfterViewInit {
     private renderer: Renderer2,
     private animationBuilder: AnimationBuilder,
     private sanityService: SanityService,
-    private titleService: Title
+    private titleService: Title,
   ) {}
 
   ngAfterViewInit() {
@@ -118,7 +118,7 @@ export class HomeComponent implements AfterViewInit {
       style({ opacity: 0, transform: this.getTransform(animationName) }),
       animate(
         '800ms ease-out',
-        style({ opacity: 1, transform: 'translate(0, 0)' })
+        style({ opacity: 1, transform: 'translate(0, 0)' }),
       ),
     ]);
 
